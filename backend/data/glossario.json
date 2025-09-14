@@ -1,0 +1,240 @@
+{
+  "hemoglobina": {
+    "descricao": "Proteína presente nos glóbulos vermelhos, responsável por transportar oxigênio pelo corpo.",
+    "referencias": {
+      "homem": {
+        "18-70": "13,0 a 16,5 g/dL",
+        "70+": "11,5 a 15,1 g/dL"
+      },
+      "mulher": {
+        "18-70": "12,0 a 15,8 g/dL",
+        "70+": "11,5 a 15,1 g/dL"
+      },
+      "crianca": {
+        "1-17": "10,5 a 14,0 g/dL"
+      }
+    },
+    "interpretacao": "Valores baixos podem indicar anemia; valores altos podem estar ligados a problemas pulmonares, desidratação ou doenças hematológicas."
+  },
+  "glicose": {
+    "descricao": "Nível de açúcar no sangue.",
+    "referencias": {
+      "adulto": {
+        "18-70": "70 a 99 mg/dL (jejum)",
+        "70+": "70 a 105 mg/dL (jejum)"
+      },
+      "crianca": {
+        "1-12": "70 a 100 mg/dL",
+        "12-18": "70 a 100 mg/dL"
+      }
+    },
+    "interpretacao": "Valores elevados podem indicar diabetes ou risco aumentado para desenvolvê-la. Valores muito baixos podem indicar hipoglicemia."
+  },
+  "hemacias": {
+    "descricao": "Também conhecidas como glóbulos vermelhos ou eritrócitos, são as células do sangue responsáveis por transportar oxigênio dos pulmões para todo o corpo e trazer de volta o gás carbônico para ser eliminado.",
+    "referencias": {
+      "homem": {
+        "18-70": "4,50 a 6,10 milhões/mm³",
+        "70+": "3,90 a 5,36 milhões/mm³"
+      },
+      "mulher": {
+        "18-70": "4,00 a 5,40 milhões/mm³",
+        "70+": "3,90 a 5,36 milhões/mm³"
+      },
+      "crianca": {
+        "1-17": "4,07 a 5,37 milhões/mm³"
+      }
+    },
+    "interpretacao": "Valores baixos (eritropenia) são um forte indicador de anemia, que pode causar fadiga e palidez. Valores altos (policitemia) podem ser causados por desidratação, doenças pulmonares ou da medula óssea."
+  },
+  "hematocrito": {
+    "descricao": "Percentual do volume de sangue ocupado pelas hemácias.",
+    "referencias": {
+      "homem": {
+        "18-70": "36,0 a 54,0%",
+        "70+": "33,0 a 46,0%"
+      },
+      "mulher": {
+        "18-70": "33,0 a 47,8%",
+        "70+": "33,0 a 46,0%"
+      },
+      "crianca": {
+        "1-17": "30,0 a 40,5%"
+      }
+    },
+    "interpretacao": "Valores baixos geralmente indicam anemia ou hemorragia. Valores altos podem ser sinal de desidratação, doenças pulmonares crônicas ou policitemia (excesso de produção de glóbulos vermelhos)."
+  },
+  "V.C.M": {
+    "descricao": "Sigla para Volume Corpuscular Médio. É uma medida do tamanho médio das hemácias (glóbulos vermelhos), ajudando a classificar diferentes tipos de anemia.",
+    "referencias": {
+      "homem": {
+        "18-70": "80,0 a 98,0 μ³",
+        "70+": "80,0 a 98,0 μ³"
+      },
+      "mulher": {
+        "18-70": "80,0 a 98,0 μ³",
+        "70+": "80,0 a 98,0 μ³"
+      },
+      "crianca": {
+        "1-17": "70,0 a 86,0 μ³"
+      }
+    },
+    "interpretacao": "Valores baixos (microcitose) sugerem anemia por deficiência de ferro ou talassemia. Valores altos (macrocitose) podem indicar deficiência de vitamina B12 ou ácido fólico."
+  },
+  "H.C.M": {
+    "descricao": "Sigla para Hemoglobina Corpuscular Média. Indica a quantidade média de hemoglobina presente em cada hemácia (glóbulo vermelho).",
+    "referencias": {
+      "homem": {
+        "18-70": "26,8 a 32,9 pg",
+        "70+": "27,0 a 31,0 pg"
+      },
+      "mulher": {
+        "18-70": "26,2 a 32,6 pg",
+        "70+": "27,0 a 31,0 pg"
+      },
+      "crianca": {
+        "1-17": "23,2 a 31,7 pg"
+      }
+    },
+    "interpretacao": "Valores baixos indicam que as hemácias têm menos hemoglobina que o normal (hipocromia), comum em anemias por deficiência de ferro. Valores normais ou altos geralmente indicam outros tipos de anemia."
+  },
+  "C.H.C.M": {
+    "descricao": "Sigla para Concentração de Hemoglobina Corpuscular Média. Mede a concentração média de hemoglobina nas hemácias (glóbulos vermelhos), indicando quanto desse pigmento está presente em relação ao volume das células. Ajuda a classificar o tipo de anemia e avaliar a capacidade do sangue para transportar oxigênio.",
+    "referencias": {
+      "homem": {
+        "18-70": "30,0 a 36,5 g/dL",
+        "70+": "30,0 a 36,5 g/dL"
+      },
+      "mulher": {
+        "18-70": "30,0 a 36,5 g/dL",
+        "70+": "30,0 a 36,5 g/dL"
+      },
+      "crianca": {
+        "1-17": "30,0 a 36,5 g/dL"
+      }
+    },
+    "interpretacao": "Valores baixos (hipocromia) estão frequentemente associados a anemias por deficiência de ferro, talassemia ou doenças crônicas. Valores altos (hipercromia) são mais raros e podem indicar desidratação, esferocitose hereditária ou anemias hemolíticas."
+  },
+  "RDW": {
+    "descricao": "Sigla para Red Cell Distribution Width (Amplitude de Distribuição dos Glóbulos Vermelhos). Mede a variação no tamanho das hemácias (glóbulos vermelhos) no sangue, indicando se elas são uniformes ou têm tamanhos diferentes.",
+    "referencias": {
+      "homem": {
+        "18-70": "11,0 a 16,0%",
+        "70+": "11,0 a 16,0%"
+      },
+      "mulher": {
+        "18-70": "11,0 a 16,0%",
+        "70+": "11,0 a 16,0%"
+      },
+      "crianca": {
+        "1-17": "11,0 a 16,0%"
+      }
+    },
+    "interpretacao": "Valores elevados indicam anisocitose (hemácias de tamanhos variados), comum em anemias por deficiência de ferro, deficiência de vitamina B12 ou ácido fólico. Valores normais sugerem hemácias uniformes. Quando o RDW está alto com VCM normal, pode ser um sinal precoce de anemia."
+  },
+  "leucocitos": {
+    "descricao": "Também conhecidos como glóbulos brancos, são células de defesa do organismo que atuam no combate a infecções, alergias e outros processos inflamatórios. Compõem o sistema imunológico e são produzidos na medula óssea.",
+    "referencias": {
+      "adulto": {
+        "18-70": "3.600 a 11.000/mm³",
+        "70+": "3.600 a 11.000/mm³"
+      },
+      "crianca": {
+        "1-17": "4.000 a 14.000/mm³"
+      }
+    },
+    "interpretacao": "Valores elevados (leucocitose) podem indicar infecções, inflamações, estresse ou leucemia. Valores baixos (leucopenia) podem sugerir deficiências na medula óssea, viroses, efeitos de medicamentos ou doenças autoimunes."
+  },
+  "bastonetes": {
+    "descricao": "Tipo de glóbulo branco (leucócito) jovem e imaturo, também conhecido como neutrófilo bastonete. Representa a primeira linha de defesa do organismo contra infecções bacterianas.",
+    "referencias": {
+      "adulto": {
+        "18-70": "0 a 5% (ou 0 a 550/mm³)",
+        "70+": "0 a 5% (ou 0 a 550/mm³)"
+      },
+      "crianca": {
+        "1-17": "0 a 6% (ou 0 a 450/mm³)"
+      }
+    },
+    "interpretacao": "Valores aumentados (desvio à esquerda) geralmente indicam infecção bacteriana aguda ou processo inflamatório, quando a medula óssea libera células mais jovens para combater a infecção. Valores muito baixos podem ocorrer em algumas infecções virais ou deficiências da medula óssea."
+  },
+  "segmentados": {
+    "descricao": "Também conhecidos como neutrófilos segmentados, são glóbulos brancos maduros que representam a principal defesa do organismo contra infecções bacterianas. São a forma madura dos neutrófilos, com núcleo dividido em segmentos.",
+    "referencias": {
+      "adulto": {
+        "18-70": "40 a 70% (ou 1.480 a 7.700/mm³)",
+        "70+": "40 a 70% (ou 1.480 a 7.700/mm³)"
+      },
+      "crianca": {
+        "1-17": "30 a 64% (ou 1.200 a 9.600/mm³)"
+      }
+    },
+    "interpretacao": "Valores aumentados (neutrofilia) geralmente indicam infecção bacteriana, inflamação ou estresse. Valores diminuídos (neutropenia) podem sugerir infecções virais, deficiência de vitamina B12, efeitos de quimioterapia ou problemas na medula óssea."
+  },
+  "eosinofilos": {
+    "descricao": "Tipo de glóbulo branco (leucócito) especializado no combate a parasitas e no controle de reações alérgicas. Representam uma parte importante do sistema de defesa do organismo.",
+    "referencias": {
+      "adulto": {
+        "18-70": "0 a 7% (ou 0 a 550/mm³)",
+        "70+": "0 a 7% (ou 0 a 550/mm³)"
+      },
+      "crianca": {
+        "1-17": "0 a 5% (ou 0 a 550/mm³)"
+      }
+    },
+    "interpretacao": "Valores aumentados (eosinofilia) geralmente indicam alergias, asma, infecções parasitárias ou doenças autoimunes. Valores muito elevados podem estar associados a algumas formas de câncer. Valores diminuídos são menos significativos clinicamente, mas podem ocorrer durante o uso de certos medicamentos corticoides ou em situações de estresse."
+  },
+  "basofilos": {
+    "descricao": "Tipo mais raro de glóbulo branco (leucócito) que atua principalmente em processos alérgicos e inflamatórios, liberando substâncias como histamina e heparina.",
+  "referencias": {
+    "adulto": {
+      "18-70": "0-2% (ou 0 a 220/mm³)",
+      "70+": "0-2% (ou 0 a 220/mm³)"
+    },
+    "crianca": {
+      "1-17": "0-2% (ou 0 a 300/mm³)"
+    }
+  },
+  "interpretacao": "Valores aumentados (basofilia) podem indicar processos alérgicos, inflamações crônicas, hipotiroidismo ou algumas doenças hematológicas. Valores diminuídos são comuns durante situações de estresse, uso de corticoides ou hipertiroidismo."
+  },
+  "linfócitos": {
+  "descricao": "Tipo de glóbulo branco (leucócito) fundamental para o sistema imunológico, responsável pela defesa específica do organismo através da produção de anticorpos e do combate direto a vírus, bactérias e células cancerosas.",
+  "referencias": {
+    "adulto": {
+      "18-70": "20 a 50% (ou 740 a 5.500/mm³)",
+      "70+": "20 a 50% (ou 740 a 5.500/mm³)"
+    },
+    "crianca": {
+      "1-17": "38 a 70% (ou 1.520 a 10.500/mm³)"
+    }
+  },
+  "interpretacao": "Valores aumentados (linfocitose) geralmente indicam infecções virais (como mononucleose, citomegalovírus), algumas infecções bacterianas específicas (tuberculose, coqueluche) ou leucemias linfoides. Valores diminuídos (linfopenia) podem sugerir imunodeficiências, uso de corticoides, quimioterapia, lupus ou infecções virais como HIV."
+ },
+  "monócitos": {
+  "descricao": "Tipo de glóbulo branco (leucócito) que atua como a primeira linha de defesa do organismo, fagocitando (englobando e destruindo) agentes invasores, células mortas e resíduos celulares. São considerados os 'lixeiros' do sistema imunológico.",
+  "referencias": {
+    "adulto": {
+      "18-70": "3 a 14% (ou 37 a 1.110/mm³)",
+      "70+": "3 a 14% (ou 37 a 1.110/mm³)"
+    },
+    "crianca": {
+      "1-17": "3 a 14% (ou 40 a 1.110/mm³)"
+    }
+  },
+  "interpretacao": "Valores aumentados (monocitose) podem indicar infecções crônicas (como tuberculose), processos inflamatórios, doenças autoimunes ou alguns tipos de leucemia. Valores diminuídos (monocitopenia) são menos comuns, mas podem ocorrer em casos de infecções graves, quimioterapia ou problemas na medula óssea."
+ },
+  "plaquetas": {
+    "descricao": "Fragmentos celulares produzidos na medula óssea que atuam no processo de coagulação sanguínea, ajudando a estancar sangramentos e formar coágulos.",
+    "referencias": {
+      "adulto": {
+        "18-70": "140.000 a 450.000/mm³",
+        "70+": "140.000 a 450.000/mm³"
+      },
+      "crianca": {
+        "1-17": "140.000 a 450.000/mm³"
+      }
+    },
+    "interpretacao": "Valores baixos (trombocitopenia) podem aumentar o risco de sangramentos e podem ser causados por doenças autoimunes, infecções virais, quimioterapia ou problemas na medula óssea. Valores altos (trombocitose) podem predispor a formação de coágulos sanguíneos e podem ocorrer em processos inflamatórios, após cirurgias ou em algumas neoplasias."
+  }
+
+}

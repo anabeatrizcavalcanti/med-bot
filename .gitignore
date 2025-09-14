@@ -1,0 +1,33 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Configuração de IDEs/editores
+.vscode/
+.idea/
+*.swp
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Arquivos do uvicorn (reload)
+*.pid

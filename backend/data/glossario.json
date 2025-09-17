@@ -50,7 +50,7 @@
     },
     "interpretacao": "Valores baixos geralmente indicam anemia ou hemorragia. Valores altos podem ser sinal de desidratação, doenças pulmonares crônicas ou policitemia (excesso de produção de glóbulos vermelhos)."
   },
-  "V.C.M": {
+  "v.c.m": {
     "descricao": "Sigla para Volume Corpuscular Médio. É uma medida do tamanho médio das hemácias (glóbulos vermelhos), ajudando a classificar diferentes tipos de anemia.",
     "referencias": {
       "homem": {
@@ -67,7 +67,7 @@
     },
     "interpretacao": "Valores baixos (microcitose) sugerem anemia por deficiência de ferro ou talassemia. Valores altos (macrocitose) podem indicar deficiência de vitamina B12 ou ácido fólico."
   },
-  "H.C.M": {
+  "h.c.m": {
     "descricao": "Sigla para Hemoglobina Corpuscular Média. Indica a quantidade média de hemoglobina presente em cada hemácia (glóbulo vermelho).",
     "referencias": {
       "homem": {
@@ -84,7 +84,7 @@
     },
     "interpretacao": "Valores baixos indicam que as hemácias têm menos hemoglobina que o normal (hipocromia), comum em anemias por deficiência de ferro. Valores normais ou altos geralmente indicam outros tipos de anemia."
   },
-  "C.H.C.M": {
+  "c.h.c.m": {
     "descricao": "Sigla para Concentração de Hemoglobina Corpuscular Média. Mede a concentração média de hemoglobina nas hemácias (glóbulos vermelhos), indicando quanto desse pigmento está presente em relação ao volume das células. Ajuda a classificar o tipo de anemia e avaliar a capacidade do sangue para transportar oxigênio.",
     "referencias": {
       "homem": {
@@ -101,7 +101,7 @@
     },
     "interpretacao": "Valores baixos (hipocromia) estão frequentemente associados a anemias por deficiência de ferro, talassemia ou doenças crônicas. Valores altos (hipercromia) são mais raros e podem indicar desidratação, esferocitose hereditária ou anemias hemolíticas."
   },
-  "RDW": {
+  "rdw": {
     "descricao": "Sigla para Red Cell Distribution Width (Amplitude de Distribuição dos Glóbulos Vermelhos). Mede a variação no tamanho das hemácias (glóbulos vermelhos) no sangue, indicando se elas são uniformes ou têm tamanhos diferentes.",
     "referencias": {
       "homem": {
@@ -222,7 +222,7 @@
     },
     "interpretacao": "Valores baixos (trombocitopenia) podem aumentar o risco de sangramentos e podem ser causados por doenças autoimunes, infecções virais, quimioterapia ou problemas na medula óssea. Valores altos (trombocitose) podem predispor a formação de coágulos sanguíneos e podem ocorrer em processos inflamatórios, após cirurgias ou em algumas neoplasias."
   },
-  "TSH - hormonio tireoestimulante": {
+  "tsh - hormonio tireoestimulante": {
     "descricao": "Hormônio produzido pela glândula hipófise (no cérebro) que regula o funcionamento da tireoide, estimulando a produção dos hormônios T3 e T4. É o principal exame para avaliar se a tireoide está funcionando adequadamente.",
     "referencias": {
       "geral": {
@@ -239,7 +239,7 @@
     },
     "interpretacao": "Valores elevados sugerem hipotireoidismo (tireoide pouco ativa). Valores baixos indicam hipertireoidismo (tireoide muito ativa). Resultados alterados devem ser correlacionados com os níveis de T4 livre para um diagnóstico preciso. Valores levemente alterados podem requerer apenas monitoramento."
   },
-  "T4 L - tiroxina livre": {
+  "t4 l - tiroxina livre": {
     "descricao": "Forma livre do hormônio T4 produzido pela tireoide, que não está ligado a proteínas e está disponível para ser utilizado pelas células do corpo. É a forma metabolicamente ativa do hormônio.",
     "referencias": {
       "geral": {
@@ -248,7 +248,7 @@
     },
     "interpretacao": "Valores baixos podem indicar hipotireoidismo. Valores altos podem sugerir hipertireoidismo. Deve ser analisado em conjunto com o TSH para um diagnóstico preciso da função tireoidiana. Alterações nos níveis de T4 livre refletem diretamente o estado metabólico do organismo."
   },
-  "vitamina D (25 hidroxi)": {
+  "vitamina d (25 hidroxi)": {
     "descricao": "Forma principal de vitamina D circulante no sangue, utilizada para avaliar o estado de vitamina D no organismo. Essa vitamina é essencial para a saúde óssea, absorção de cálcio, função muscular e sistema imunológico.",
     "referencias": {
       "geral": {
@@ -257,7 +257,7 @@
     },
     "interpretacao": "Valores abaixo de 20 ng/mL indicam deficiência e requerem suplementação. Valores entre 20-30 ng/mL podem ser adequados para população geral, mas para grupos de risco o ideal é manter entre 30-60 ng/mL. Valores acima de 100 ng/mL indicam risco de intoxicação com possível hipercalcemia. A deficiência é comum em regiões com pouca luz solar, idosos e pessoas com pouca exposição solar."
   }, 
-  "vitamina B12 - cobalamina": {
+  "vitamina b12 - cobalamina": {
     "descricao": "Vitamina essencial para a formação das hemácias, funcionamento do sistema nervoso, síntese de DNA e metabolismo energético. É obtida principalmente através do consumo de alimentos de origem animal.",
     "referencias": {
       "geral": {
@@ -284,7 +284,7 @@
     },
     "interpretacao": "Valores baixos indicam deficiência de ferro, podendo levar à anemia ferropriva. Valores elevados podem sugerir sobrecarga de ferro (hemocromatose), inflamação crônica, infecções ou doenças hepáticas. A ferritina é um marcador sensível para avaliar os estoques de ferro no organismo."
   },
-  "glicemina de jejum": {
+  "glicemia de jejum": {
     "descricao": "Exame que mede o nível de açúcar (glicose) no sangue após um período de jejum de 8 a 12 horas. É o principal exame para rastreamento e diagnóstico do diabetes mellitus.",
     "referencias": {
       "geral": {
@@ -312,7 +312,7 @@
     },
     "interpretacao": "Valores elevados aumentam o risco de formação de placas de gordura nas artérias (aterosclerose), infarto e acidente vascular cerebral. Deve ser analisado em conjunto com as frações LDL e HDL para uma avaliação completa do perfil lipídico. Valores muito baixos são raros, mas podem ocorrer em desnutrição, hipertireoidismo ou algumas doenças hepáticas."
   },
-  "colesterol HDL": {
+  "colesterol hdl": {
     "descricao": "Conhecido como 'colesterol bom', é uma lipoproteína de alta densidade que remove o excesso de colesterol das artérias e leva de volta para o fígado, onde é metabolizado e eliminado. Atua como um fator de proteção cardiovascular.",
     "referencias": {
       "geral": {
@@ -322,7 +322,7 @@
     },
     "interpretacao": "Valores baixos aumentam significativamente o risco de doenças cardiovasculares, mesmo que outros níveis de colesterol estejam normais. Valores altos (acima de 60 mg/dL) são considerados protetores para o coração. Para elevar o HDL, recomenda-se exercícios físicos regulares, consumo de gorduras boas (azeite, abacate, castanhas) e evitar fumo."
   },
-  "colesterol não HDL": {
+  "colesterol não hdl": {
     "descricao": "Calculado subtraindo o valor do colesterol HDL do colesterol total, representa a soma de todas as frações de colesterol consideradas aterogênicas (que podem formar placas nas artérias), incluindo LDL, VLDL e IDL. É considerado um marcador de risco cardiovascular mais abrangente que o LDL isolado.",
     "referencias": {
       "geral": {
@@ -331,7 +331,7 @@
     },
     "interpretacao": "Valores elevados indicam maior risco de desenvolvimento de aterosclerose e eventos cardiovasculares. É especialmente útil em pacientes com triglicerídeos elevados, diabetes ou síndrome metabólica. Reduzir o colesterol não HDL através de dieta, exercícios e medicamentos (quando necessário) diminui o risco cardiovascular."
   },
-  "colesterol LDL": {
+  "colesterol ldl": {
     "descricao": "Conhecido como 'colesterol ruim', é uma lipoproteína de baixa densidade que transporta colesterol para as células. Em excesso, pode se acumular nas paredes das artérias, formando placas que dificultam a passagem do sangue (aterosclerose).",
     "referencias": {
       "geral": {
@@ -343,7 +343,7 @@
     },
     "interpretacao": "Valores elevados aumentam significativamente o risco de infarto, derrame cerebral e outras doenças cardiovasculares. Quanto maior o risco cardiovascular do paciente (diabetes, hipertensão, tabagismo, histórico familiar), mais baixo deve ser o valor alvo do LDL. Reduzir o LDL através de dieta, exercícios e medicamentos (quando necessário) é fundamental para prevenir complicações cardiovasculares."
   },
-  "colesterol VLDL": {
+  "colesterol vldl": {
     "descricao": "Sigla para Very Low-Density Lipoprotein (Lipoproteína de Muito Baixa Densidade). É uma partícula que transporta triglicerídeos do fígado para os tecidos do corpo. Considerado um tipo de 'colesterol ruim', semelhante ao LDL, por contribuir para a formação de placas nas artérias.",
     "referencias": {
       "geral": {
@@ -379,7 +379,7 @@
     },
     "interpretacao": "Valores elevados geralmente indicam que os rins não estão filtrando o sangue adequadamente, podendo sugerir lesão ou doença renal aguda ou crônica. Valores baixos são menos comuns, mas podem estar associados à perda de massa muscular, desnutrição ou algumas condições hepáticas."
   },
-  "ritmo de filtracao glomerular CKD-EPI": {
+  "ritmo de filtracao glomerular ckd-epi": {
     "descricao": "Estimativa da taxa de filtração glomerular (TFG) calculada pela fórmula CKD-EPI, que avalia a função renal com base nos níveis de creatinina no sangue, idade, sexo e raça. Considerado o método mais preciso para avaliar a capacidade de filtragem dos rins.",
     "referencias": {
       "geral": {
@@ -388,7 +388,7 @@
     },
     "interpretacao": "Valores abaixo de 60 mL/min/1,73m² indicam comprometimento da função renal e podem sugerir doença renal crônica. Valores entre 60-89 mL/min/1,73m² podem indicar estágio inicial de doença renal, especialmente se houver outros sinais de dano renal. A TFG deve ser monitorada regularmente em pacientes com fatores de risco para doença renal, como diabetes e hipertensão."
   },
-  "ritmo de filtracao glomerular (MDRD)": {
+  "ritmo de filtracao glomerular (mdrd)": {
     "descricao": "Estimativa da taxa de filtração glomerular (TFG) calculada pela fórmula MDRD (Modification of Diet in Renal Disease), que avalia a função renal com base nos níveis de creatinina no sangue, idade, sexo e raça. É um método amplamente utilizado para detecção e estadiamento da doença renal crônica.",
     "referencias": {
       "geral": {
@@ -397,7 +397,7 @@
     },
     "interpretacao": "Valores abaixo de 60 mL/min/1,73m² indicam comprometimento da função renal e podem sugerir doença renal crônica. Valores entre 60-89 mL/min/1,73m² podem indicar estágio inicial de doença renal, especialmente se houver outros sinais de dano renal. A TFG deve ser monitorada regularmente em pacientes com fatores de risco para doença renal, como diabetes e hipertensão."
   },
-  "aspartato aminotranferase - AST (GO)": {
+  "aspartato aminotranferase - ast (go)": {
     "descricao": "Enzima encontrada principalmente no fígado, coração, músculos e rins. É liberada no sangue quando há dano ou lesão nessas células. Também conhecida como TGO (Transaminase Glutâmico-Oxalacética).",
     "referencias": {
       "homem": {
@@ -409,7 +409,7 @@
     },
     "interpretacao": "Valores elevados podem indicar lesão hepática (hepatite, cirrose, consumo excessivo de álcool), infarto do miocárdio, doenças musculares ou outras condições que causem dano celular. Valores levemente elevados podem ser observados em exercícios intensos ou uso de certos medicamentos. Deve ser interpretado em conjunto com outros exames hepáticos para um diagnóstico preciso."
   },
-  "alanina aminotranferase - ALT (GPT)": {
+  "alanina aminotranferase - alt (gpt)": {
     "descricao": "Enzima encontrada principalmente nas células do fígado (hepatócitos). É considerada mais específica para avaliação hepática que a AST, pois sua elevação está mais relacionada a danos no fígado. Também conhecida como TGP (Transaminase Glutâmico-Pirúvica).",
     "referencias": {
       "homem": {
@@ -421,7 +421,7 @@
     },
     "interpretacao": "Valores elevados indicam lesão ou inflamação do fígado, como hepatite viral, doença hepática alcoólica, esteatose hepática (fígado gorduroso) ou uso de medicamentos hepatotóxicos. Valores levemente elevados podem ser observados em obesidade, diabetes ou uso de certos medicamentos. Deve ser interpretado em conjunto com outros exames hepáticos para um diagnóstico preciso."
   },
-  "fibrosis-4 (FIB-4)": {
+  "fibrosis-4 (fib-4)": {
     "descricao": "Índice não invasivo calculado para estimar o grau de fibrose (cicatrização) no fígado. Utiliza idade, níveis de AST e ALT (enzimas hepáticas) e contagem de plaquetas para avaliar possíveis danos hepáticos crônicos, como esteatose hepática (fígado gorduroso) e hepatites.",
     "referencias": {
       "geral": {
@@ -430,7 +430,7 @@
     },
     "interpretacao": "Valores baixos sugerem menor probabilidade de fibrose hepática avançada. Valores altos sugerem maior chance de fibrose significativa ou cirrose, especialmente em pacientes com doença hepática crônica."
   },
-  "hemoglobina glicada (HbA1c)": {
+  "hemoglobina glicada (hba1c)": {
     "descricao": "Exame que mede a média dos níveis de glicose (açúcar) no sangue nos últimos 2 a 3 meses. Mostra a porcentagem de hemoglobina (proteína dos glóbulos vermelhos) que se ligou à glucose, formando a hemoglobina glicada.",
     "referencias": {
       "geral": {
@@ -439,7 +439,7 @@
     },
     "interpretacao": "Valores entre 5,7% e 6,4% indicam pré-diabetes, enquanto valores iguais ou superiores a 6,5% sugerem diabetes mellitus. Valores acima de 7% em pacientes diabéticos indicam controle glicêmico inadequado, aumentando o risco de complicações. O exame é útil para monitorar a eficácia do tratamento e ajustar terapias."
   },
-  "grupo sanguineo e fator RH": {
+  "grupo sanguineo e fator rh": {
     "descricao": "Classificação do sangue com base na presença ou ausência de antígenos específicos na superfície das hemácias (glóbulos vermelhos). O sistema ABO classifica o sangue em quatro grupos principais: A, B, AB e O. O fator Rh indica se o sangue é positivo (presença do antígeno D) ou negativo (ausência do antígeno D).",
     "referencias": {
       "geral": {

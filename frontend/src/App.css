@@ -216,8 +216,8 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 5px;
+  margin-top: 5px;
   color: var(--primary-red);
   font-size: 1rem;
   font-weight: 500;
@@ -242,21 +242,21 @@ input[type="file"] {
   width: 100%;
   margin-top: 50px;
   padding-top: 40px;
-  border-top: 1px solid var(--border-color); /* Linha divisória fina */
+  border-top: 1px solid var(--border-color); 
 }
 
 .results-display h2 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  color: var(--primary-red); /* Título de seção em vermelho */
+  color: var(--primary-red);
   margin-bottom: 30px;
   font-size: 2rem;
   font-weight: 700;
 }
 
 .result-item {
-  background-color: var(--grey-bg); /* Fundo cinza claro para cada item */
-  border-left: 5px solid var(--primary-red); /* Borda lateral vermelha */
+  background-color: var(--grey-bg); 
+  border-left: 5px solid var(--primary-red);
   padding: 20px 25px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -266,7 +266,7 @@ input[type="file"] {
 .result-item h3 {
   font-family: 'Montserrat', sans-serif;
   margin-top: 0;
-  color: var(--primary-red); /* Nome do termo em vermelho */
+  color: var(--primary-red);
   font-size: 1.4rem;
   margin-bottom: 10px;
   font-weight: 600;

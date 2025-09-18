@@ -2,6 +2,8 @@ import os
 import httpx
 import json
 from dotenv import load_dotenv
+import google.generativeai as genai
+
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -85,3 +87,34 @@ async def extract_medical_terms(text: str) -> list[str]:
         except Exception as e:
             print(f"Um erro inesperado ocorreu: {e}")
             return {"error": "Ocorreu um erro inesperado no servidor."}
+        
+async def validate_document_context(text: str) -> bool:
+    """
+    Usa o Gemini para verificar se o texto parece ser de um documento médico.
+    Retorna True se for, False caso contrário.
+    """
+    # Usando um modelo rápido para a tarefa de classificação
+    model = genai.GenerativeModel('gemini-2.0-flash')
+
+    # Prompt direto para uma resposta simples (SIM/NÃO)
+    prompt = f"""
+    Analise o texto a seguir e determine se ele é um documento da área da saúde
+    (como um exame de sangue, laudo, receita, etc.).
+    Responda APENAS com "SIM" ou "NÃO".
+
+    Texto:
+    ---
+    {text[:2000]}
+    ---
+    """ # Limitamos a 2000 caracteres para ser rápido e econômico
+
+    try:
+        response = await model.generate_content_async(prompt)
+        answer = response.text.strip().upper()
+        
+        if "SIM" in answer:
+            return True
+        return False
+    except Exception as e:
+        print(f"Erro durante a validação do documento: {e}")
+        return False # Se houver erro na API, consideramos inválido por segurança

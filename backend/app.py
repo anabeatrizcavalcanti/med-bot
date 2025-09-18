@@ -4,8 +4,8 @@ import PyPDF2
 import io
 import json
 
-# Importa as funções dos nossos módulos de utils
-from utils.term_extractor import extract_medical_terms
+# Importa as funções, incluindo a nova de validação
+from utils.term_extractor import extract_medical_terms, validate_document_context
 from utils.rag_explainer import generate_explanation_for_term
 
 # Carrega o glossário em memória quando a aplicação inicia
@@ -33,7 +33,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "MedBot API com RAG rodando 🚀"}
+    return {"message": "MedBot API com RAG rodando."}
 
 @app.post("/explain-pdf/")
 async def explain_pdf(file: UploadFile = File(...)):
@@ -49,6 +49,13 @@ async def explain_pdf(file: UploadFile = File(...)):
         if not text.strip():
             raise HTTPException(status_code=400, detail="Não foi possível extrair texto do PDF.")
 
+        # --- NOVA LÓGICA DE VALIDAÇÃO DO DOCUMENTO ---
+        is_medical = await validate_document_context(text)
+        if not is_medical:
+            # Se não for médico, retorna um erro 400 (Bad Request)
+            raise HTTPException(status_code=400, detail="O documento enviado não parece ser um exame médico ou não se aplica ao contexto.")
+        # --- FIM DA NOVA LÓGICA ---
+
         # ETAPA 2: Extrair a lista de termos médicos com o Gemini
         extracted_terms = await extract_medical_terms(text)
         if "error" in extracted_terms:
@@ -58,14 +65,11 @@ async def explain_pdf(file: UploadFile = File(...)):
 
         # ETAPA 3: RAG (Recuperação + Geração Aumentada)
         for term in extracted_terms:
-            # Recuperação (Retrieval): Busca o termo no nosso glossário
-            # Normalizamos para minúsculas para uma busca mais flexível
             context = glossario.get(term.lower().strip())
             
             explanation_text = "Nenhuma explicação encontrada no nosso glossário para este termo."
             
             if context:
-                # Geração Aumentada (Augmented Generation): Gera a explicação com o Gemini
                 explanation_text = await generate_explanation_for_term(term, context)
             
             explanations.append({
@@ -75,5 +79,9 @@ async def explain_pdf(file: UploadFile = File(...)):
 
         return {"filename": file.filename, "explanations": explanations}
 
+    except HTTPException as http_exc:
+        # Garante que as exceções HTTP que nós criamos sejam repassadas corretamente
+        raise http_exc
     except Exception as e:
+        # Captura outras exceções inesperadas
         raise HTTPException(status_code=500, detail=f"Ocorreu um erro inesperado: {str(e)}")

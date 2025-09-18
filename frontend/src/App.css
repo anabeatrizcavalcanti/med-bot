@@ -1,0 +1,129 @@
+body {
+  background-color: #282c34;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+input[type="file"] {
+  border: 1px solid #61dafb;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #61dafb;
+  border: none;
+  color: #282c34;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  color: #aaa;
+}
+
+.error-message {
+  color: #ff6666;
+  font-size: 0.8em;
+  margin-top: 20px;
+}
+
+.results-container {
+  margin-top: 30px;
+  width: 80%;
+  max-width: 600px;
+  text-align: left;
+  border: 1px solid #61dafb;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.results-container h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.results-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.results-container li {
+  margin-bottom: 8px;
+}
+
+/* ... seu CSS existente ... */
+
+.results-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.results-container {
+  margin-top: 30px;
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.results-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #61dafb;
+}
+
+.result-item {
+  background-color: #32363e;
+  border-left: 4px solid #61dafb;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.result-item h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.result-item p {
+  color: #ccc;
+  line-height: 1.6;
+}

@@ -1,7 +1,7 @@
 # Med-Bot: Explicador de Exames Médicos
 ### Projeto para a disciplina de PLN - 2025.1
 
-O Med-Bot é uma aplicação web projetada para simplificar a compreensão de documentos médicos. A ferramenta permite que o usuário faça o upload de um arquivo de exame em formato PDF, e utilizando a IA do Google (Gemini), ela extrai e explica os termos técnicos de forma clara e acessível.
+O Med-Bot é uma aplicação web projetada para simplificar a compreensão de documentos médicos. A ferramenta permite que o usuário faça o upload de um arquivo de exame em formato PDF, e utilizando a IA da OpenAI (Chat GPT), ela extrai e explica os termos técnicos de forma clara e acessível.
 
 ## ✨ Funcionalidades
 
@@ -12,7 +12,8 @@ O Med-Bot é uma aplicação web projetada para simplificar a compreensão de do
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Backend:** Python, FastAPI, Google Gemini API, PyPDF2
+
+* **Backend:** Python, FastAPI, OpenAI Chat GPT 4.0 mini, PyPDF2
 * **Frontend:** React.js, Lucide-React (Ícones)
 
 ## 🚀 Como Rodar o Projeto
@@ -32,9 +33,12 @@ Antes de começar, garanta que você tenha os seguintes programas instalados:
     cd caminho/para/o/projeto/backend
     ```
 
-2.  Crie um arquivo de ambiente chamado `.env` na raiz da pasta `backend`. Abra este arquivo e adicione sua chave da API do Gemini:
+2.  Crie um arquivo de ambiente chamado `.env` na raiz da pasta `backend`. Abra este arquivo e adicione sua chave da API da OpenAI:
     ```env
-    GEMINI_API_KEY="SUA-CHAVE-DE-API-DO-GEMINI-AQUI"
+    OPENAI_API_KEY="SUA-CHAVE-DE-API-DA-OPENAI-AQUI"
+
+    Caso a sua chave API não seja reconhecida durante a execução do programa, utilize o comando $export OPENAI_API_KEY="SUA-CHAVE-DE-API-DA-OPENAI-AQUI"
+    no mesmo terminal do backend e tente novamente.
     ```
 
 3.  Instale as dependências de Python necessárias:

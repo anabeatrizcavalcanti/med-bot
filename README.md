@@ -12,6 +12,7 @@ O Med-Bot é uma aplicação web projetada para simplificar a compreensão de do
 
 ## 🛠️ Tecnologias Utilizadas
 
+
 * **Backend:** Python, FastAPI, OpenAI Chat GPT 4.0 mini, PyPDF2
 * **Frontend:** React.js, Lucide-React (Ícones)
 

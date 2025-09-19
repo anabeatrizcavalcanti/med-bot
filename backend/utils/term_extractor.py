@@ -40,7 +40,16 @@ async def extract_medical_terms(text: str) -> list[str]:
 
     content = resp.choices[0].message.content
     data = json.loads(content)
-    return data.get("termos", [])
+    termos = data.get("termos", [])
+
+    # DEBUG: imprime todos os termos extraídos no console
+    print("=== TERMOS EXTRAÍDOS PELO GPT ===")
+    for t in termos:
+        print(f"- {repr(t)}")
+    print("=================================")
+
+    return termos
+
 
 
 async def validate_document_context(text: str) -> bool:

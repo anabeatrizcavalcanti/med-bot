@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import PyPDF2
 import io
 import json
+import unicodedata
 
 # Importa as funções, incluindo a nova de validação
 from utils.term_extractor import extract_medical_terms, validate_document_context
@@ -16,6 +17,33 @@ except FileNotFoundError:
     glossario = {}
     print("AVISO: Arquivo glossario.json não encontrado.")
 
+def normalize_term(term: str) -> str:
+    """
+    Normaliza um termo para comparar com o glossário:
+    - Converte para minúsculas
+    - Remove acentos
+    - Remove espaços extras
+    """
+    if not term:
+        return ""
+    nfkd = unicodedata.normalize("NFKD", term)
+    only_ascii = "".join(c for c in nfkd if not unicodedata.combining(c))
+    normalized = only_ascii.lower().strip()
+
+    # Mapeia siglas
+    aliases = {
+        "vcm": "v.c.m",
+        "v.c.m": "v.c.m",
+        "hcm": "h.c.m",
+        "h.c.m": "h.c.m",
+        "chcm": "c.h.c.m",
+        "c.h.c.m": "c.h.c.m",
+    }
+
+    # Remove espaços extras
+    normalized = normalized.replace(" ", "")
+
+    return aliases.get(normalized, normalized)
 
 app = FastAPI(title="MedBot API - RAG", version="2.0")
 
@@ -65,15 +93,16 @@ async def explain_pdf(file: UploadFile = File(...)):
 
         # ETAPA 3: RAG (Recuperação + Geração Aumentada)
         for term in extracted_terms:
-            context = glossario.get(term.lower().strip())
-            
+            normalized = normalize_term(term)
+            context = glossario.get(normalized)
+
             explanation_text = "Nenhuma explicação encontrada no nosso glossário para este termo."
-            
+
             if context:
                 explanation_text = await generate_explanation_for_term(term, context)
-            
+
             explanations.append({
-                "term": term,
+                "term": term,  # mantém o termo original para exibir ao usuário
                 "explanation": explanation_text
             })
 

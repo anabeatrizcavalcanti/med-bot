@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from openai import AsyncOpenAI
 
 # Carrega a chave da API
@@ -9,50 +10,64 @@ if not api_key:
 client = AsyncOpenAI(api_key=api_key)
 
 EXTRACTOR_PROMPT = """
-Você é um especialista em processar documentos de exames de laboratório. Sua tarefa é ler o texto de um exame e extrair os dados de forma estruturada.
+Você é um assistente especializado em extrair dados de exames médicos de laudos laboratoriais.
 
-Sua resposta DEVE SER ESTRITAMENTE um objeto JSON contendo uma chave "grupos".
-"grupos" deve ser uma lista, onde cada item representa uma seção do exame (ex: "HEMOGRAMA COMPLETO", "PERFIL LIPÍDICO").
+Sua tarefa:
+- Ler o texto fornecido de um exame.
+- Identificar os diferentes grupos (como Eritrograma, Leucograma, Bioquímica).
+- Para cada grupo, extrair os resultados em formato JSON conforme abaixo.
 
-Cada item de grupo deve ter duas chaves:
-1. "grupo": O nome da seção do exame.
-2. "resultados": Uma lista de resultados encontrados nessa seção.
+Formato de saída (STRICT JSON, sem explicações fora do JSON):
+{
+  "grupos": [
+    {
+      "grupo": "Nome do Grupo",
+      "resultados": [
+        {
+          "exame": "Nome do exame (ex: Hemácias)",
+          "valor": "Valor encontrado (número ou texto)",
+          "unidade": "Unidade do exame (ex: /mm³, g/dL, %)"
+        }
+      ]
+    }
+  ]
+}
 
-Cada item em "resultados" deve conter:
-- "exame": O nome exato do componente do exame (ex: "Hemácias", "Colesterol HDL").
-- "valor": O valor numérico ou textual encontrado para o paciente.
-- "unidade": A unidade de medida associada ao valor (ex: "milhões/mm³", "g/dL").
-
-IGNORE completamente as colunas de "Valores de referência". Foque apenas nos resultados do paciente.
-
-Texto do Exame:
----
-{text}
----
+Regras IMPORTANTES:
+- Ignore cabeçalhos de tabela como "Resultado", "Unidade", "Valores de Referência".
+- O campo "exame" NUNCA deve ser "Resultado", "Unidade" ou "Valores de Referência".
+- Inclua apenas os exames reais com seus valores.
+- Não inclua os valores de referência.
+- SUA RESPOSTA DEVE SER UM ÚNICO OBJETO JSON VÁLIDO COMEÇANDO COM { E TERMINANDO COM }.
 """
 
 async def extract_structured_data(text: str) -> dict:
-    """
-    Usa a IA para extrair dados estruturados (grupos, exames, valores, unidades) do texto de um PDF.
-    """
+    if not api_key:
+        raise ValueError("A variável de ambiente OPENAI_API_KEY não foi encontrada.")
+
+    # limitar tamanho se necessário
+    truncated_text = text[:12000]
+
+    resp = await client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": "Você é um assistente que extrai dados estruturados de exames médicos."},
+            {"role": "user", "content": EXTRACTOR_PROMPT + f"\n\nTexto do exame:\n---\n{truncated_text}\n---"},
+        ],
+        temperature=0,
+        response_format={"type": "json_object"}  # força JSON válido
+    )
+
+    content = resp.choices[0].message.content.strip()
+
+    import re, json
     try:
-        response = await client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": "Você é um especialista em extração de dados de exames de laboratório."},
-                {"role": "user", "content": EXTRACTOR_PROMPT.format(text=text[:12000])} # Limita o texto
-            ],
-            response_format={"type": "json_object"}
-        )
-        
-        content = response.choices[0].message.content
-        parsed_json = json.loads(content)
+        data = json.loads(content)
+    except json.JSONDecodeError:
+        match = re.search(r"\{.*\}", content, re.DOTALL)
+        if match:
+            data = json.loads(match.group(0))
+        else:
+            raise
 
-        if "grupos" not in parsed_json or not isinstance(parsed_json["grupos"], list):
-            return {"grupos": [], "error": "A IA retornou um formato de JSON inesperado."}
-            
-        return parsed_json
-
-    except Exception as e:
-        print(f"Erro ao extrair dados estruturados: {e}")
-        return {"grupos": [], "error": f"Falha ao comunicar com a IA para estruturar os dados: {e}"}
+    return data

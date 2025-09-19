@@ -124,3 +124,4 @@ async def analyze_pdf(
         raise http_exc
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Ocorreu um erro inesperado no servidor: {str(e)}")
+        

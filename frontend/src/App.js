@@ -55,8 +55,6 @@ function App() {
   const [age, setAge] = useState('');
   const [sex, setSex] = useState('');
   const [openGroups, setOpenGroups] = useState({});
-  
-  // --- MUDANÇAS AQUI ---
   const [useRag, setUseRag] = useState(true); // Estado para controlar o uso do RAG
   const [ragModeUsed, setRagModeUsed] = useState(null); // Estado para exibir o modo usado
 

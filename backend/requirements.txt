@@ -3,6 +3,5 @@ uvicorn
 pydantic
 python-multipart
 PyPDF2
-httpx
 python-dotenv
-google-generativeai
+openai>=1.0.0

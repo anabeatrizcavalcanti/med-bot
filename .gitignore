@@ -31,3 +31,7 @@ build/
 
 # Arquivos do uvicorn (reload)
 *.pid
+
+# Arquivos de ambiente
+.env
+

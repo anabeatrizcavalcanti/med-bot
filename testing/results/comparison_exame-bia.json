@@ -1,0 +1,499 @@
+{
+  "pdf_file": "exame-bia.pdf",
+  "metrics": {
+    "latency_with_rag_seconds": 20.54,
+    "latency_without_rag_seconds": 28.57
+  },
+  "output_with_rag": {
+    "filename": "exame-bia.pdf",
+    "groups": [
+      {
+        "group_name": "Eritrograma",
+        "results": [
+          {
+            "exame": "hemacias",
+            "valor": "3,81",
+            "unidade": "milhões/mm³",
+            "interpretacao": "Também conhecidas como glóbulos vermelhos ou eritrócitos, são as células do sangue responsáveis por transportar oxigênio dos pulmões para todo o corpo e trazer de volta o gás carbônico para ser eliminado. Valores baixos (eritropenia) são um forte indicador de anemia, que pode causar fadiga e palidez. Valores altos (policitemia) podem ser causados por desidratação, doenças pulmonares ou da medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "hemoglobina",
+            "valor": "12,1",
+            "unidade": "g/dL",
+            "interpretacao": "Proteína presente nos glóbulos vermelhos, responsável por transportar oxigênio pelo corpo. Valores baixos podem indicar anemia; valores altos podem estar ligados a problemas pulmonares, desidratação ou doenças hematológicas.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "hematocrito",
+            "valor": "35,7",
+            "unidade": "%",
+            "interpretacao": "Percentual do volume de sangue ocupado pelas hemácias. Valores baixos geralmente indicam anemia ou hemorragia. Valores altos podem ser sinal de desidratação, doenças pulmonares crônicas ou policitemia (excesso de produção de glóbulos vermelhos).",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "v.c.m.",
+            "valor": "93,7",
+            "unidade": "µ³",
+            "interpretacao": "Sigla para Volume Corpuscular Médio. É uma medida do tamanho médio das hemácias (glóbulos vermelhos), ajudando a classificar diferentes tipos de anemia. Valores baixos (microcitose) sugerem anemia por deficiência de ferro ou talassemia. Valores altos (macrocitose) podem indicar deficiência de vitamina B12 ou ácido fólico.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "h.c.m.",
+            "valor": "31,8 / 33,9",
+            "unidade": "pg / g/dL",
+            "interpretacao": "Sigla para Hemoglobina Corpuscular Média. Indica a quantidade média de hemoglobina presente em cada hemácia (glóbulo vermelho). Valores baixos indicam que as hemácias têm menos hemoglobina que o normal (hipocromia), comum em anemias por deficiência de ferro. Valores normais ou altos geralmente indicam outros tipos de anemia.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "rdw",
+            "valor": "11,4",
+            "unidade": "%",
+            "interpretacao": "Sigla para Red Cell Distribution Width (Amplitude de Distribuição dos Glóbulos Vermelhos). Mede a variação no tamanho das hemácias (glóbulos vermelhos) no sangue, indicando se elas são uniformes ou têm tamanhos diferentes. Valores elevados indicam anisocitose (hemácias de tamanhos variados), comum em anemias por deficiência de ferro, deficiência de vitamina B12 ou ácido fólico. Valores normais sugerem hemácias uniformes. Quando o RDW está alto com VCM normal, pode ser um sinal precoce de anemia.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Leucograma",
+        "results": [
+          {
+            "exame": "leucocitos",
+            "valor": "6.010",
+            "unidade": "/mm³",
+            "interpretacao": "Também conhecidos como glóbulos brancos, são células de defesa do organismo que atuam no combate a infecções, alergias e outros processos inflamatórios. Compõem o sistema imunológico e são produzidos na medula óssea. Valores elevados (leucocitose) podem indicar infecções, inflamações, estresse ou leucemia. Valores baixos (leucopenia) podem sugerir deficiências na medula óssea, viroses, efeitos de medicamentos ou doenças autoimunes.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "bastonetes",
+            "valor": "0",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) jovem e imaturo, também conhecido como neutrófilo bastonete. Representa a primeira linha de defesa do organismo contra infecções bacterianas. Valores aumentados (desvio à esquerda) geralmente indicam infecção bacteriana aguda ou processo inflamatório, quando a medula óssea libera células mais jovens para combater a infecção. Valores muito baixos podem ocorrer em algumas infecções virais ou deficiências da medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "segmentados",
+            "valor": "59",
+            "unidade": "%",
+            "interpretacao": "Também conhecidos como neutrófilos segmentados, são glóbulos brancos maduros que representam a principal defesa do organismo contra infecções bacterianas. São a forma madura dos neutrófilos, com núcleo dividido em segmentos. Valores aumentados (neutrofilia) geralmente indicam infecção bacteriana, inflamação ou estresse. Valores diminuídos (neutropenia) podem sugerir infecções virais, deficiência de vitamina B12, efeitos de quimioterapia ou problemas na medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "eosinofilos",
+            "valor": "2",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) especializado no combate a parasitas e no controle de reações alérgicas. Representam uma parte importante do sistema de defesa do organismo. Valores aumentados (eosinofilia) geralmente indicam alergias, asma, infecções parasitárias ou doenças autoimunes. Valores muito elevados podem estar associados a algumas formas de câncer. Valores diminuídos são menos significativos clinicamente, mas podem ocorrer durante o uso de certos medicamentos corticoides ou em situações de estresse.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "basofilos",
+            "valor": "0",
+            "unidade": "%",
+            "interpretacao": "Tipo mais raro de glóbulo branco (leucócito) que atua principalmente em processos alérgicos e inflamatórios, liberando substâncias como histamina e heparina. Valores aumentados (basofilia) podem indicar processos alérgicos, inflamações crônicas, hipotiroidismo ou algumas doenças hematológicas. Valores diminuídos são comuns durante situações de estresse, uso de corticoides ou hipertiroidismo.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "linfócitos",
+            "valor": "32",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) fundamental para o sistema imunológico, responsável pela defesa específica do organismo através da produção de anticorpos e do combate direto a vírus, bactérias e células cancerosas. Valores aumentados (linfocitose) geralmente indicam infecções virais (como mononucleose, citomegalovírus), algumas infecções bacterianas específicas (tuberculose, coqueluche) ou leucemias linfoides. Valores diminuídos (linfopenia) podem sugerir imunodeficiências, uso de corticoides, quimioterapia, lupus ou infecções virais como HIV.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "monócitos",
+            "valor": "7",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) que atua como a primeira linha de defesa do organismo, fagocitando (englobando e destruindo) agentes invasores, células mortas e resíduos celulares. São considerados os 'lixeiros' do sistema imunológico. Valores aumentados (monocitose) podem indicar infecções crônicas (como tuberculose), processos inflamatórios, doenças autoimunes ou alguns tipos de leucemia. Valores diminuídos (monocitopenia) são menos comuns, mas podem ocorrer em casos de infecções graves, quimioterapia ou problemas na medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Plaquetograma",
+        "results": [
+          {
+            "exame": "plaquetas",
+            "valor": "214.000",
+            "unidade": "/mm³",
+            "interpretacao": "Fragmentos celulares produzidos na medula óssea que atuam no processo de coagulação sanguínea, ajudando a estancar sangramentos e formar coágulos. Valores baixos (trombocitopenia) podem aumentar o risco de sangramentos e podem ser causados por doenças autoimunes, infecções virais, quimioterapia ou problemas na medula óssea. Valores altos (trombocitose) podem predispor a formação de coágulos sanguíneos e podem ocorrer em processos inflamatórios, após cirurgias ou em algumas neoplasias.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Perfil Lipídico",
+        "results": [
+          {
+            "exame": "triglicerideos",
+            "valor": "55",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **55.0**, que está **dentro do normal**. (Referência: < 150 mg/dL). Valores elevados aumentam o risco de doenças cardiovasculares, pancreatite e síndrome metabólica. Podem estar relacionados a dieta rica em carboidratos e gorduras, obesidade, diabetes não controlado, hipotireoidismo ou consumo excessivo de álcool. Valores muito baixos podem indicar desnutrição, hipertireoidismo ou síndromes de má absorção.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "colesterol total",
+            "valor": "211",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **211.0**, que está **acima do normal**. (Referência: < 200 mg/dL). Valores elevados aumentam o risco de formação de placas de gordura nas artérias (aterosclerose), infarto e acidente vascular cerebral. Deve ser analisado em conjunto com as frações LDL e HDL para uma avaliação completa do perfil lipídico. Valores muito baixos são raros, mas podem ocorrer em desnutrição, hipertireoidismo ou algumas doenças hepáticas.",
+            "analise_ia": {
+              "titulo": "Colesterol Total Elevado",
+              "analise": "O resultado do seu exame de colesterol total foi **211 mg/dL**, que está **acima do normal** para a referência de menos de 200 mg/dL. Este valor elevado pode aumentar o risco de formação de placas de gordura nas artérias, o que pode levar a condições como aterosclerose, infarto e acidente vascular cerebral. É importante considerar este resultado em conjunto com as frações de LDL e HDL para uma avaliação mais completa do seu perfil lipídico.",
+              "recomendacao": "Consulte um cardiologista para uma avaliação mais detalhada.",
+              "alerta": "Este resultado não é um diagnóstico. Consulte um profissional de saúde para uma interpretação completa."
+            },
+            "status_class": "alto"
+          },
+          {
+            "exame": "colesterol hdl",
+            "valor": "82",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **82.0**, que está **dentro do normal**. (Referência: > 40 mg/dL). Valores baixos aumentam significativamente o risco de doenças cardiovasculares, mesmo que outros níveis de colesterol estejam normais. Valores altos (acima de 60 mg/dL) são considerados protetores para o coração. Para elevar o HDL, recomenda-se exercícios físicos regulares, consumo de gorduras boas (azeite, abacate, castanhas) e evitar fumo.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "colesterol não hdl",
+            "valor": "129",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **129.0**, que está **diferente do valor de referência**. (Referência: até 30 mg/dL acima do valor do LDL respectivo). Valores elevados indicam maior risco de desenvolvimento de aterosclerose e eventos cardiovasculares. É especialmente útil em pacientes com triglicerídeos elevados, diabetes ou síndrome metabólica. Reduzir o colesterol não HDL através de dieta, exercícios e medicamentos (quando necessário) diminui o risco cardiovascular.",
+            "analise_ia": {
+              "titulo": "Colesterol Não HDL Elevado",
+              "analise": "O resultado do seu exame de colesterol não HDL foi **129**, que está **acima do valor de referência**. Para mulheres de 35 anos, valores elevados de colesterol não HDL podem indicar um maior risco de desenvolvimento de aterosclerose e eventos cardiovasculares. Este marcador é particularmente relevante em pacientes com triglicerídeos elevados, diabetes ou síndrome metabólica. A redução do colesterol não HDL através de mudanças na dieta, aumento da atividade física e, se necessário, medicação, pode ajudar a diminuir o risco cardiovascular.",
+              "recomendacao": "Consulte um cardiologista para uma avaliação mais detalhada.",
+              "alerta": "Este resultado não é um diagnóstico. Consulte um profissional de saúde para uma interpretação completa."
+            },
+            "status_class": "alto"
+          },
+          {
+            "exame": "colesterol ldl",
+            "valor": "115",
+            "unidade": "mg/dL",
+            "interpretacao": "Conhecido como 'colesterol ruim', é uma lipoproteína de baixa densidade que transporta colesterol para as células. Em excesso, pode se acumular nas paredes das artérias, formando placas que dificultam a passagem do sangue (aterosclerose). Valores elevados aumentam significativamente o risco de infarto, derrame cerebral e outras doenças cardiovasculares. Quanto maior o risco cardiovascular do paciente (diabetes, hipertensão, tabagismo, histórico familiar), mais baixo deve ser o valor alvo do LDL. Reduzir o LDL através de dieta, exercícios e medicamentos (quando necessário) é fundamental para prevenir complicações cardiovasculares.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "colesterol vldl",
+            "valor": "14",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **14.0**, que está **dentro do normal**. (Referência: 2 a 23 mg/dL). Valores elevados estão associados ao aumento do risco de doenças cardiovasculares e aterosclerose. Normalmente aumenta junto com os triglicerídeos, sendo comum em pessoas com síndrome metabólica, diabetes não controlado, obesidade abdominal e resistência à insulina.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Glicemia",
+        "results": [
+          {
+            "exame": "glicemia de jejum",
+            "valor": "84",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **84.0**, que está **dentro do normal**. (Referência: < 100 mg/dL). Valores consistentemente acima de 126 mg/dL indicam diabetes mellitus. Valores entre 100-125 mg/dL sugerem pré-diabetes, estado de risco para desenvolver diabetes. Valores abaixo de 70 mg/dL podem indicar hipoglicemia, que pode causar tonturas, mal-estar e desmaio. O jejum inadequado pode alterar os resultados.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Bioquímica",
+        "results": [
+          {
+            "exame": "vitamina d (25 hidroxi)",
+            "valor": "15,5",
+            "unidade": "ng/mL",
+            "interpretacao": "Seu resultado foi **15.5**, que está **abaixo do normal**. (Referência: 20 a 60 ng/mL). Valores abaixo de 20 ng/mL indicam deficiência e requerem suplementação. Valores entre 20-30 ng/mL podem ser adequados para população geral, mas para grupos de risco o ideal é manter entre 30-60 ng/mL. Valores acima de 100 ng/mL indicam risco de intoxicação com possível hipercalcemia. A deficiência é comum em regiões com pouca luz solar, idosos e pessoas com pouca exposição solar.",
+            "analise_ia": {
+              "titulo": "Vitamina D Abaixo do Normal",
+              "analise": "O resultado do exame de vitamina D do paciente é **15,5 ng/mL**, que está **abaixo do normal**. De acordo com a interpretação base, valores abaixo de **20 ng/mL** indicam deficiência e requerem suplementação. Essa condição é comum em regiões com pouca luz solar, em idosos e em pessoas com pouca exposição solar. Considerando a idade de **35 anos** e o sexo **feminino**, é importante abordar essa deficiência para evitar complicações associadas à baixa vitamina D.",
+              "recomendacao": "Endocrinologista",
+              "alerta": "Este resultado não é um diagnóstico. Consulte um profissional de saúde para uma avaliação completa."
+            },
+            "status_class": "baixo"
+          },
+          {
+            "exame": "vitamina b12 - cobalamina",
+            "valor": "328",
+            "unidade": "pg/mL",
+            "interpretacao": "Seu resultado foi **328.0**, que está **dentro do normal**. (Referência: 221 a 911 pg/mL). Valores baixos (<200 pg/mL) indicam deficiência e podem causar anemia megaloblástica, fadiga, danos neurológicos e formigamentos. Valores entre 200-300 pg/mL podem representar deficiência marginal. Valores elevados (>900 pg/mL) são incomuns, mas podem ocorrer em doenças hepáticas, renais ou suplementação excessiva. A deficiência é comum em vegetarianos estritos, idosos e pessoas com problemas de absorção intestinal.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "ferritina",
+            "valor": "36,3",
+            "unidade": "ng/mL",
+            "interpretacao": "Proteína que armazena ferro no organismo, funcionando como o principal reservatório deste mineral. Seus níveis refletem a quantidade total de ferro armazenada no corpo. Valores baixos indicam deficiência de ferro, podendo levar à anemia ferropriva. Valores elevados podem sugerir sobrecarga de ferro (hemocromatose), inflamação crônica, infecções ou doenças hepáticas. A ferritina é um marcador sensível para avaliar os estoques de ferro no organismo.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "hemoglobina glicada (hba1c)",
+            "valor": "4,90",
+            "unidade": "%",
+            "interpretacao": "Seu resultado foi **4.9**, que está **dentro do normal**. (Referência: < 5,7%). Valores entre 5,7% e 6,4% indicam pré-diabetes, enquanto valores iguais ou superiores a 6,5% sugerem diabetes mellitus. Valores acima de 7% em pacientes diabéticos indicam controle glicêmico inadequado, aumentando o risco de complicações. O exame é útil para monitorar a eficácia do tratamento e ajustar terapias.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      }
+    ],
+    "rag_mode_used": true
+  },
+  "output_without_rag": {
+    "filename": "exame-bia.pdf",
+    "groups": [
+      {
+        "group_name": "Eritrograma",
+        "results": [
+          {
+            "exame": "hemacias",
+            "valor": "3,81",
+            "unidade": "milhões/mm³",
+            "interpretacao": "Também conhecidas como glóbulos vermelhos ou eritrócitos, são as células do sangue responsáveis por transportar oxigênio dos pulmões para todo o corpo e trazer de volta o gás carbônico para ser eliminado. Valores baixos (eritropenia) são um forte indicador de anemia, que pode causar fadiga e palidez. Valores altos (policitemia) podem ser causados por desidratação, doenças pulmonares ou da medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "hemoglobina",
+            "valor": "12,1",
+            "unidade": "g/dL",
+            "interpretacao": "Proteína presente nos glóbulos vermelhos, responsável por transportar oxigênio pelo corpo. Valores baixos podem indicar anemia; valores altos podem estar ligados a problemas pulmonares, desidratação ou doenças hematológicas.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "hematocrito",
+            "valor": "35,7",
+            "unidade": "%",
+            "interpretacao": "Percentual do volume de sangue ocupado pelas hemácias. Valores baixos geralmente indicam anemia ou hemorragia. Valores altos podem ser sinal de desidratação, doenças pulmonares crônicas ou policitemia (excesso de produção de glóbulos vermelhos).",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "v.c.m.",
+            "valor": "93,7",
+            "unidade": "µ³",
+            "interpretacao": "Sigla para Volume Corpuscular Médio. É uma medida do tamanho médio das hemácias (glóbulos vermelhos), ajudando a classificar diferentes tipos de anemia. Valores baixos (microcitose) sugerem anemia por deficiência de ferro ou talassemia. Valores altos (macrocitose) podem indicar deficiência de vitamina B12 ou ácido fólico.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "h.c.m.",
+            "valor": "31,8 / 33,9",
+            "unidade": "pg / g/dL",
+            "interpretacao": "Sigla para Hemoglobina Corpuscular Média. Indica a quantidade média de hemoglobina presente em cada hemácia (glóbulo vermelho). Valores baixos indicam que as hemácias têm menos hemoglobina que o normal (hipocromia), comum em anemias por deficiência de ferro. Valores normais ou altos geralmente indicam outros tipos de anemia.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "rdw",
+            "valor": "11,4",
+            "unidade": "%",
+            "interpretacao": "Sigla para Red Cell Distribution Width (Amplitude de Distribuição dos Glóbulos Vermelhos). Mede a variação no tamanho das hemácias (glóbulos vermelhos) no sangue, indicando se elas são uniformes ou têm tamanhos diferentes. Valores elevados indicam anisocitose (hemácias de tamanhos variados), comum em anemias por deficiência de ferro, deficiência de vitamina B12 ou ácido fólico. Valores normais sugerem hemácias uniformes. Quando o RDW está alto com VCM normal, pode ser um sinal precoce de anemia.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Leucograma",
+        "results": [
+          {
+            "exame": "leucocitos",
+            "valor": "6.010",
+            "unidade": "/mm³",
+            "interpretacao": "Também conhecidos como glóbulos brancos, são células de defesa do organismo que atuam no combate a infecções, alergias e outros processos inflamatórios. Compõem o sistema imunológico e são produzidos na medula óssea. Valores elevados (leucocitose) podem indicar infecções, inflamações, estresse ou leucemia. Valores baixos (leucopenia) podem sugerir deficiências na medula óssea, viroses, efeitos de medicamentos ou doenças autoimunes.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "bastonetes",
+            "valor": "0",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) jovem e imaturo, também conhecido como neutrófilo bastonete. Representa a primeira linha de defesa do organismo contra infecções bacterianas. Valores aumentados (desvio à esquerda) geralmente indicam infecção bacteriana aguda ou processo inflamatório, quando a medula óssea libera células mais jovens para combater a infecção. Valores muito baixos podem ocorrer em algumas infecções virais ou deficiências da medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "segmentados",
+            "valor": "59",
+            "unidade": "%",
+            "interpretacao": "Também conhecidos como neutrófilos segmentados, são glóbulos brancos maduros que representam a principal defesa do organismo contra infecções bacterianas. São a forma madura dos neutrófilos, com núcleo dividido em segmentos. Valores aumentados (neutrofilia) geralmente indicam infecção bacteriana, inflamação ou estresse. Valores diminuídos (neutropenia) podem sugerir infecções virais, deficiência de vitamina B12, efeitos de quimioterapia ou problemas na medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "eosinofilos",
+            "valor": "2",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) especializado no combate a parasitas e no controle de reações alérgicas. Representam uma parte importante do sistema de defesa do organismo. Valores aumentados (eosinofilia) geralmente indicam alergias, asma, infecções parasitárias ou doenças autoimunes. Valores muito elevados podem estar associados a algumas formas de câncer. Valores diminuídos são menos significativos clinicamente, mas podem ocorrer durante o uso de certos medicamentos corticoides ou em situações de estresse.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "basofilos",
+            "valor": "0",
+            "unidade": "%",
+            "interpretacao": "Tipo mais raro de glóbulo branco (leucócito) que atua principalmente em processos alérgicos e inflamatórios, liberando substâncias como histamina e heparina. Valores aumentados (basofilia) podem indicar processos alérgicos, inflamações crônicas, hipotiroidismo ou algumas doenças hematológicas. Valores diminuídos são comuns durante situações de estresse, uso de corticoides ou hipertiroidismo.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "linfócitos",
+            "valor": "32",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) fundamental para o sistema imunológico, responsável pela defesa específica do organismo através da produção de anticorpos e do combate direto a vírus, bactérias e células cancerosas. Valores aumentados (linfocitose) geralmente indicam infecções virais (como mononucleose, citomegalovírus), algumas infecções bacterianas específicas (tuberculose, coqueluche) ou leucemias linfoides. Valores diminuídos (linfopenia) podem sugerir imunodeficiências, uso de corticoides, quimioterapia, lupus ou infecções virais como HIV.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "monócitos",
+            "valor": "7",
+            "unidade": "%",
+            "interpretacao": "Tipo de glóbulo branco (leucócito) que atua como a primeira linha de defesa do organismo, fagocitando (englobando e destruindo) agentes invasores, células mortas e resíduos celulares. São considerados os 'lixeiros' do sistema imunológico. Valores aumentados (monocitose) podem indicar infecções crônicas (como tuberculose), processos inflamatórios, doenças autoimunes ou alguns tipos de leucemia. Valores diminuídos (monocitopenia) são menos comuns, mas podem ocorrer em casos de infecções graves, quimioterapia ou problemas na medula óssea.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Plaquetograma",
+        "results": [
+          {
+            "exame": "plaquetas",
+            "valor": "214.000",
+            "unidade": "/mm³",
+            "interpretacao": "Fragmentos celulares produzidos na medula óssea que atuam no processo de coagulação sanguínea, ajudando a estancar sangramentos e formar coágulos. Valores baixos (trombocitopenia) podem aumentar o risco de sangramentos e podem ser causados por doenças autoimunes, infecções virais, quimioterapia ou problemas na medula óssea. Valores altos (trombocitose) podem predispor a formação de coágulos sanguíneos e podem ocorrer em processos inflamatórios, após cirurgias ou em algumas neoplasias.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      },
+      {
+        "group_name": "Bioquímica",
+        "results": [
+          {
+            "exame": "glicemia de jejum",
+            "valor": "84",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **84.0**, que está **dentro do normal**. (Referência: < 100 mg/dL). Valores consistentemente acima de 126 mg/dL indicam diabetes mellitus. Valores entre 100-125 mg/dL sugerem pré-diabetes, estado de risco para desenvolver diabetes. Valores abaixo de 70 mg/dL podem indicar hipoglicemia, que pode causar tonturas, mal-estar e desmaio. O jejum inadequado pode alterar os resultados.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "triglicerideos",
+            "valor": "55",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **55.0**, que está **dentro do normal**. (Referência: < 150 mg/dL). Valores elevados aumentam o risco de doenças cardiovasculares, pancreatite e síndrome metabólica. Podem estar relacionados a dieta rica em carboidratos e gorduras, obesidade, diabetes não controlado, hipotireoidismo ou consumo excessivo de álcool. Valores muito baixos podem indicar desnutrição, hipertireoidismo ou síndromes de má absorção.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "colesterol total",
+            "valor": "211",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **211.0**, que está **acima do normal**. (Referência: < 200 mg/dL). Valores elevados aumentam o risco de formação de placas de gordura nas artérias (aterosclerose), infarto e acidente vascular cerebral. Deve ser analisado em conjunto com as frações LDL e HDL para uma avaliação completa do perfil lipídico. Valores muito baixos são raros, mas podem ocorrer em desnutrição, hipertireoidismo ou algumas doenças hepáticas.",
+            "analise_ia": {
+              "titulo": "Colesterol Total Elevado",
+              "analise": "O resultado do exame indica que o colesterol total da paciente está em **211 mg/dL**, o que é considerado **alto** para uma mulher de 35 anos. Níveis elevados de colesterol total podem aumentar o risco de doenças cardiovasculares, como aterosclerose, infarto do miocárdio e acidente vascular cerebral. É importante considerar o perfil lipídico completo, incluindo LDL (colesterol ruim), HDL (colesterol bom) e triglicerídeos, para uma avaliação mais precisa do risco cardiovascular.",
+              "recomendacao": "Consulte um cardiologista ou um endocrinologista para uma avaliação mais detalhada e orientação sobre o manejo do colesterol.",
+              "alerta": "Este é apenas um guia informativo e não substitui um diagnóstico médico profissional."
+            },
+            "status_class": "alto"
+          },
+          {
+            "exame": "colesterol hdl",
+            "valor": "82",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **82.0**, que está **dentro do normal**. (Referência: > 40 mg/dL). Valores baixos aumentam significativamente o risco de doenças cardiovasculares, mesmo que outros níveis de colesterol estejam normais. Valores altos (acima de 60 mg/dL) são considerados protetores para o coração. Para elevar o HDL, recomenda-se exercícios físicos regulares, consumo de gorduras boas (azeite, abacate, castanhas) e evitar fumo.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "colesterol não hdl",
+            "valor": "129",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **129.0**, que está **diferente do valor de referência**. (Referência: até 30 mg/dL acima do valor do LDL respectivo). Valores elevados indicam maior risco de desenvolvimento de aterosclerose e eventos cardiovasculares. É especialmente útil em pacientes com triglicerídeos elevados, diabetes ou síndrome metabólica. Reduzir o colesterol não HDL através de dieta, exercícios e medicamentos (quando necessário) diminui o risco cardiovascular.",
+            "analise_ia": {
+              "titulo": "Colesterol Não HDL Alto",
+              "analise": "O colesterol não HDL é uma medida que representa o colesterol total menos o colesterol HDL (o 'bom' colesterol). Um valor de `129` mg/dL é considerado alto para uma mulher de `35` anos, o que pode indicar um risco aumentado para doenças cardiovasculares. O colesterol não HDL é importante porque inclui o colesterol LDL (o 'mau' colesterol) e outros tipos de colesterol que podem contribuir para o acúmulo de placas nas artérias. Manter os níveis de colesterol sob controle é crucial para reduzir o risco de infarto e derrame. Recomenda-se considerar mudanças no estilo de vida, como dieta e exercício, e, em alguns casos, medicação, após avaliação médica.",
+              "recomendacao": "Cardiologista",
+              "alerta": "Este não é um diagnóstico. Consulte um profissional de saúde para uma avaliação completa."
+            },
+            "status_class": "alto"
+          },
+          {
+            "exame": "colesterol ldl",
+            "valor": "115",
+            "unidade": "mg/dL",
+            "interpretacao": "Conhecido como 'colesterol ruim', é uma lipoproteína de baixa densidade que transporta colesterol para as células. Em excesso, pode se acumular nas paredes das artérias, formando placas que dificultam a passagem do sangue (aterosclerose). Valores elevados aumentam significativamente o risco de infarto, derrame cerebral e outras doenças cardiovasculares. Quanto maior o risco cardiovascular do paciente (diabetes, hipertensão, tabagismo, histórico familiar), mais baixo deve ser o valor alvo do LDL. Reduzir o LDL através de dieta, exercícios e medicamentos (quando necessário) é fundamental para prevenir complicações cardiovasculares.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "colesterol vldl",
+            "valor": "14",
+            "unidade": "mg/dL",
+            "interpretacao": "Seu resultado foi **14.0**, que está **dentro do normal**. (Referência: 2 a 23 mg/dL). Valores elevados estão associados ao aumento do risco de doenças cardiovasculares e aterosclerose. Normalmente aumenta junto com os triglicerídeos, sendo comum em pessoas com síndrome metabólica, diabetes não controlado, obesidade abdominal e resistência à insulina.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "vitamina d (25 hidroxi)",
+            "valor": "15,5",
+            "unidade": "ng/mL",
+            "interpretacao": "Seu resultado foi **15.5**, que está **abaixo do normal**. (Referência: 20 a 60 ng/mL). Valores abaixo de 20 ng/mL indicam deficiência e requerem suplementação. Valores entre 20-30 ng/mL podem ser adequados para população geral, mas para grupos de risco o ideal é manter entre 30-60 ng/mL. Valores acima de 100 ng/mL indicam risco de intoxicação com possível hipercalcemia. A deficiência é comum em regiões com pouca luz solar, idosos e pessoas com pouca exposição solar.",
+            "analise_ia": {
+              "titulo": "Vitamina D Baixa",
+              "analise": "O resultado do exame indica que o nível de vitamina D (25-hidroxi) no sangue está em 15,5 ng/mL, o que é considerado baixo para uma mulher de 35 anos. Valores baixos de vitamina D podem estar associados a uma série de condições, incluindo fraqueza muscular, dor óssea, e um risco aumentado de fraturas. Além disso, a deficiência de vitamina D pode afetar negativamente o sistema imunológico e estar associada a um risco aumentado de certas doenças crônicas, como doenças cardiovasculares e alguns tipos de câncer.",
+              "recomendacao": "Consulte um endocrinologista para uma avaliação mais detalhada e orientações sobre suplementação ou ajustes na dieta.",
+              "alerta": "Este resultado não é um diagnóstico. Consulte um profissional de saúde para uma avaliação completa."
+            },
+            "status_class": "baixo"
+          },
+          {
+            "exame": "vitamina b12 - cobalamina",
+            "valor": "328",
+            "unidade": "pg/mL",
+            "interpretacao": "Seu resultado foi **328.0**, que está **dentro do normal**. (Referência: 221 a 911 pg/mL). Valores baixos (<200 pg/mL) indicam deficiência e podem causar anemia megaloblástica, fadiga, danos neurológicos e formigamentos. Valores entre 200-300 pg/mL podem representar deficiência marginal. Valores elevados (>900 pg/mL) são incomuns, mas podem ocorrer em doenças hepáticas, renais ou suplementação excessiva. A deficiência é comum em vegetarianos estritos, idosos e pessoas com problemas de absorção intestinal.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "ferritina",
+            "valor": "36,3",
+            "unidade": "ng/mL",
+            "interpretacao": "Proteína que armazena ferro no organismo, funcionando como o principal reservatório deste mineral. Seus níveis refletem a quantidade total de ferro armazenada no corpo. Valores baixos indicam deficiência de ferro, podendo levar à anemia ferropriva. Valores elevados podem sugerir sobrecarga de ferro (hemocromatose), inflamação crônica, infecções ou doenças hepáticas. A ferritina é um marcador sensível para avaliar os estoques de ferro no organismo.",
+            "analise_ia": null,
+            "status_class": "normal"
+          },
+          {
+            "exame": "hemoglobina glicada (hba1c)",
+            "valor": "4,90",
+            "unidade": "%",
+            "interpretacao": "Seu resultado foi **4.9**, que está **dentro do normal**. (Referência: < 5,7%). Valores entre 5,7% e 6,4% indicam pré-diabetes, enquanto valores iguais ou superiores a 6,5% sugerem diabetes mellitus. Valores acima de 7% em pacientes diabéticos indicam controle glicêmico inadequado, aumentando o risco de complicações. O exame é útil para monitorar a eficácia do tratamento e ajustar terapias.",
+            "analise_ia": null,
+            "status_class": "normal"
+          }
+        ]
+      }
+    ],
+    "rag_mode_used": false
+  }
+}

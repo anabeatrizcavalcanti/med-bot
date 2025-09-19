@@ -79,3 +79,13 @@ Pronto! A aplicação será aberta automaticamente no seu navegador. Caso não a
 **`http://localhost:3000`**
 
 Agora você já pode fazer o upload de um PDF e ver a ferramenta em ação.
+
+## Vídeo demonstrativo:
+
+https://github.com/user-attachments/assets/7012deff-0cdd-4366-9e49-6461810d04a8
+
+## Slides - Apresentação
+[Med.pdf](https://github.com/user-attachments/files/22432619/Med.pdf)
+
+
+

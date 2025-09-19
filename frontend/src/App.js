@@ -1,8 +1,54 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
-import { X } from 'lucide-react';
-// MUDANÇA AQUI: Adicionando a extensão .gif ao import
-import ExameGif from './exame.gif'; // Importa o GIF como uma variável (URL)
+import { X, User, Activity, ChevronDown, AlertTriangle, Stethoscope } from 'lucide-react';
+import ExameGif from './exame.gif';
+import ReactMarkdown from 'react-markdown';
+
+// Componente para o Acordeão
+const AccordionItem = ({ group, isOpen, onToggle }) => (
+  <div className="result-group">
+    <button className="group-title-button" onClick={onToggle}>
+      <h3 className="group-title">{group.group_name}</h3>
+      <ChevronDown className={`chevron-icon ${isOpen ? 'open' : ''}`} />
+    </button>
+    {isOpen && (
+      <div className="group-content">
+        {group.results.map((item, itemIndex) => (
+          <div key={itemIndex} className={`result-item ${item.status_class}`}>
+            <div className="result-header">
+              <h4>{item.exame}</h4>
+              <span className="result-value">{item.valor} {item.unidade}</span>
+            </div>
+            {/* MUDANÇA: className foi removida. A estilização será feita pelo pai '.interpretation-text' */}
+            <div className="interpretation-text">
+                <ReactMarkdown>{item.interpretacao}</ReactMarkdown>
+            </div>
+            
+            {/* MUDANÇA: A análise da IA agora é renderizada corretamente */}
+            {item.analise_ia && (
+               <div className="ai-analysis">
+                 <h5><Activity size={16} /> {item.analise_ia.titulo}</h5>
+                 {/* MUDANÇA: className removida. Estilização via pai '.analysis-body' */}
+                 <div className="analysis-body">
+                    <ReactMarkdown>{item.analise_ia.analise}</ReactMarkdown>
+                 </div>
+                 
+                 <div className="recommendation">
+                    <ReactMarkdown>{item.analise_ia.recomendacao}</ReactMarkdown>
+                 </div>
+                 <p className="disclaimer">
+                    <AlertTriangle size={14} />
+                    {item.analise_ia.alerta}
+                 </p>
+               </div>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+);
+
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -10,159 +56,110 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const fileInputRef = useRef(null);
+  const [age, setAge] = useState('');
+  const [sex, setSex] = useState('');
+  const [openGroups, setOpenGroups] = useState({});
 
-  // ... (toda a lógica handleFileChange, handleDrop, etc., continua a mesma)
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
     if (file && file.type === 'application/pdf') {
-      setSelectedFile(file);
-      setError('');
-      setResults([]);
+      setSelectedFile(file); setError(''); setResults([]);
     } else {
-      setSelectedFile(null);
-      setError('Por favor, selecione um arquivo PDF válido.');
+      setSelectedFile(null); setError('Por favor, selecione um arquivo PDF válido.');
     }
-  };
-
-  const handleDrop = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    event.currentTarget.classList.remove('drag-over');
-    const file = event.dataTransfer.files[0];
-    if (file && file.type === 'application/pdf') {
-      setSelectedFile(file);
-      setError('');
-      setResults([]);
-    } else {
-      setSelectedFile(null);
-      setError('Por favor, solte um arquivo PDF válido.');
-    }
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    event.currentTarget.classList.add('drag-over');
-  };
-
-  const handleDragLeave = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    event.currentTarget.classList.remove('drag-over');
   };
 
   const handleClearFile = () => {
     setSelectedFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
-    setResults([]);
-    setError('');
+    if (fileInputRef.current) fileInputRef.current.value = '';
+    setResults([]); setError('');
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!selectedFile) {
-      setError('Por favor, selecione um arquivo PDF.');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!selectedFile || !age || !sex) {
+      setError('Por favor, preencha a idade, o sexo e selecione um arquivo PDF.');
       return;
     }
-
-    setIsLoading(true);
-    setError('');
-    setResults([]);
+    setIsLoading(true); setError(''); setResults([]); setOpenGroups({});
 
     const formData = new FormData();
     formData.append('file', selectedFile);
+    formData.append('idade', age);
+    formData.append('sexo', sex);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/explain-pdf/', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail?.error || errorData.detail || `Erro ${response.status}`);
-      }
-
+      const response = await fetch('http://127.0.0.1:8000/analyze-pdf/', { method: 'POST', body: formData });
       const data = await response.json();
-      setResults(data.explanations);
-
+      if (!response.ok) throw new Error(data.detail || `Erro do servidor: ${response.status}`);
+      setResults(data.groups);
     } catch (err) {
-      console.error("Erro na requisição:", err);
       setError(err.message || 'Ocorreu um erro ao se comunicar com o servidor.');
     } finally {
       setIsLoading(false);
     }
   };
 
+  const toggleGroup = (index) => {
+    setOpenGroups(prev => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  const handleDrop = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.remove('drag-over'); const file = e.dataTransfer.files[0]; if (file && file.type === 'application/pdf') { setSelectedFile(file); setError(''); setResults([]); } else { setSelectedFile(null); setError('Por favor, solte um arquivo PDF válido.'); } };
+  const handleDragOver = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.add('drag-over'); };
+  const handleDragLeave = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.remove('drag-over'); };
 
   return (
     <div className="container">
       <header className="header">
         <div className="header-title-container">
-          {/* MUDANÇA AQUI: Usando a variável importada ExameGif */}
           <img src={ExameGif} alt="Med-Bot Logo" className="header-logo" />
           <h1>Med-Bot</h1>
         </div>
-        <p>Seu assistente para descomplicar exames médicos.</p>
+        <p>Seu assistente para descomplicar e analisar exames médicos.</p>
       </header>
 
       <main className="main-content">
-        <div 
-          className="upload-zone"
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-        >
+        <div className="user-inputs">
+          <div className="input-group">
+            <label htmlFor="age">Sua Idade</label>
+            <input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Ex: 35" />
+          </div>
+          <div className="input-group">
+            <label htmlFor="sex">Sexo Biológico</label>
+            <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
+              <option value="" disabled>Selecione...</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+            </select>
+          </div>
+        </div>
+        <div className="upload-zone" onDrop={handleDrop} onDragOver={handleDragOver} onDragLeave={handleDragLeave}>
           {selectedFile ? (
             <div className="file-preview">
               <p className="file-name">{selectedFile.name}</p>
-              <button className="clear-file-button" onClick={handleClearFile}>
-                <X size={16} />
-              </button>
+              <button className="clear-file-button" onClick={handleClearFile}><X size={16} /></button>
             </div>
           ) : (
-            <>
-              {/* O ícone de upload foi removido para manter o design clean */}
-              <p className="upload-instructions">
-                Arraste e solte seu PDF aqui, ou <span className="browse-link" onClick={() => fileInputRef.current.click()}>procure um arquivo</span>
-              </p>
-              <input
-                type="file"
-                ref={fileInputRef}
-                accept=".pdf"
-                onChange={handleFileChange}
-                style={{ display: 'none' }}
-              />
-            </>
+            <p className="upload-instructions">Arraste e solte seu PDF aqui, ou <span className="browse-link" onClick={() => fileInputRef.current.click()}>procure um arquivo</span></p>
           )}
+           <input type="file" ref={fileInputRef} accept=".pdf" onChange={handleFileChange} style={{ display: 'none' }} />
         </div>
-
         {error && <p className="status-message error">{error}</p>}
-        {isLoading && (
-          <div className="loading-indicator">
-            <div className="spinner"></div>
-            <p>Analisando o documento com IA...</p>
-          </div>
-        )}
-
-        <button
-          className="process-button"
-          onClick={handleSubmit}
-          disabled={!selectedFile || isLoading}
-        >
-          {isLoading ? 'Analisando...' : 'Explicar Exame'}
+        <button className="process-button" onClick={handleSubmit} disabled={!selectedFile || !age || !sex || isLoading}>
+          {isLoading ? 'Analisando...' : 'Analisar Exame'}
         </button>
+        {isLoading && (<div className="loading-indicator"><div className="spinner"></div><p>Analisando o documento com IA...</p></div>)}
 
         {results.length > 0 && (
           <div className="results-display">
-            <h2>Termos Explicados:</h2>
-            {results.map((item, index) => (
-              <div key={index} className="result-item">
-                <h3>{item.term}</h3>
-                <p>{item.explanation}</p>
-              </div>
+            <h2>Resultados da Análise</h2>
+            {results.map((group, groupIndex) => (
+              <AccordionItem 
+                key={groupIndex}
+                group={group}
+                isOpen={!!openGroups[groupIndex]}
+                onToggle={() => toggleGroup(groupIndex)}
+              />
             ))}
           </div>
         )}
@@ -172,3 +169,4 @@ function App() {
 }
 
 export default App;
+

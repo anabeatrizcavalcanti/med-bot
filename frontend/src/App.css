@@ -2,60 +2,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
 
 :root {
-  --primary-red: #E74C3C;        /* Vermelho vibrante */
-  --light-red-bg: #FDECEC;       /* Fundo vermelho muito claro */
-  --dark-text: #333333;          /* Texto principal escuro */
-  --light-text: #666666;          /* Texto secundário */
-  --border-color: #E0E0E0;       /* Borda sutil */
-  --shadow-light: rgba(0, 0, 0, 0.08); /* Sombra leve */
-  --white-bg: #FFFFFF;           /* Fundo branco puro */
-  --grey-bg: #F9F9F9;            /* Fundo cinza claro para elementos */
+  --primary-red: #E74C3C;
+  --light-red-bg: #FDECEC;
+  --dark-text: #333333;
+  --light-text: #666666;
+  --border-color: #E0E0E0;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --white-bg: #FFFFFF;
+  --grey-bg: #F9F9F9;
+  --dark-red: #c0392b;
 }
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif; /* Fonte mais clean para o corpo */
-  background-color: var(--white-bg); /* Fundo branco para a página */
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--white-bg);
   color: var(--dark-text);
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Alinha no topo */
+  align-items: flex-start;
   padding: 40px 20px;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Container Principal --- */
+/* --- Container Principal (MAIOR)--- */
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px; /* Aumentado para ocupar mais espaço */
   background-color: var(--white-bg);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px var(--shadow-light); /* Sombra mais elegante */
+  box-shadow: 0 10px 30px var(--shadow-light);
 }
 
 /* --- Header --- */
 .header {
-  background-color: var(--white-bg); /* Fundo branco no header */
-  padding: 30px 40px 20px; /* Ajuste de padding */
+  background-color: var(--white-bg);
+  padding: 30px 40px 20px;
   text-align: center;
-  border-bottom: 1px solid var(--border-color); /* Linha divisória sutil */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
 }
 
 .header h1 {
-  font-family: 'Montserrat', sans-serif; /* Fonte para o título */
-  color: var(--primary-red); /* Título em vermelho */
-  margin: 0 0 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-red);
+  margin: 0;
   font-size: 3.2rem;
   font-weight: 700;
-  letter-spacing: -0.5px; /* Leve ajuste no espaçamento */
+  letter-spacing: -0.5px;
 }
 
 .header p {
-  color: var(--light-text); /* Texto secundário em cinza */
+  color: var(--light-text);
   margin: 0;
   font-size: 1.1rem;
   font-weight: 400;
@@ -69,34 +83,71 @@ body {
   align-items: center;
 }
 
+/* --- Estilos para os campos de Idade e Sexo --- */
+.user-inputs {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--light-text);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.input-group input,
+.input-group select {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--grey-bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px var(--light-red-bg);
+}
+
 /* --- Upload Zone --- */
 .upload-zone {
   width: 100%;
   border: 2px dashed var(--border-color);
   border-radius: 12px;
-  padding: 40px 20px; /* Mais padding */
+  padding: 40px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-height: 180px; /* Maior altura */
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--grey-bg); /* Fundo cinza claro para a zona */
+  background-color: var(--grey-bg);
   position: relative;
-  margin-bottom: 25px; /* Espaço para o botão */
+  margin-bottom: 25px;
 }
 
 .upload-zone:hover,
 .upload-zone.drag-over {
   border-color: var(--primary-red);
   background-color: var(--light-red-bg);
-}
-
-.upload-icon {
-  color: var(--primary-red);
-  margin-bottom: 18px; /* Mais espaço */
 }
 
 .upload-instructions {
@@ -107,9 +158,9 @@ body {
 
 .browse-link {
   color: var(--primary-red);
-  font-weight: 600; /* Mais destaque */
-  text-decoration: none; /* Sem underline */
-  border-bottom: 1px solid var(--primary-red); /* Sublinhado sutil ao invés de underline padrão */
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary-red);
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -121,14 +172,14 @@ body {
 .file-preview {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Espaço entre nome e botão */
-  width: calc(100% - 40px); /* Ajuste para não colar na borda */
-  padding: 15px 20px; /* Mais padding */
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  padding: 15px 20px;
   background-color: var(--light-red-bg);
   border-radius: 8px;
   color: var(--primary-red);
   font-weight: 500;
-  position: absolute; /* Para ficar dentro da zona de upload */
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -140,9 +191,9 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex-grow: 1; /* Permite que o nome do arquivo ocupe o espaço */
+  flex-grow: 1;
   text-align: left;
-  padding-right: 15px; /* Espaço entre nome e botão X */
+  padding-right: 15px;
 }
 
 .clear-file-button {
@@ -179,12 +230,12 @@ input[type="file"] {
   width: 100%;
   max-width: 300px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); /* Sombra vermelha */
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
 }
 
 .process-button:hover:not(:disabled) {
   background-color: var(--dark-red);
-  transform: translateY(-2px); /* Efeito de elevação */
+  transform: translateY(-2px);
 }
 
 .process-button:disabled {
@@ -216,9 +267,9 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  margin-top: 5px;
-  color: var(--primary-red);
+  gap: 10px;
+  margin-top: 20px;
+  color: var(--light-text);
   font-size: 1rem;
   font-weight: 500;
 }
@@ -237,7 +288,7 @@ input[type="file"] {
   100% { transform: rotate(360deg); }
 }
 
-/* --- Results Display --- */
+/* --- Estilos para o Acordeão de Resultados --- */
 .results-display {
   width: 100%;
   margin-top: 50px;
@@ -246,60 +297,111 @@ input[type="file"] {
 }
 
 .results-display h2 {
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  color: var(--primary-red);
+  text-align: left;
   margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-red);
   font-size: 2rem;
-  font-weight: 700;
 }
 
-.result-item {
-  background-color: var(--grey-bg); 
-  border-left: 5px solid var(--primary-red);
-  padding: 20px 25px;
-  border-radius: 10px;
+.result-group {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 8px var(--shadow-light);
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.result-item h3 {
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 0;
-  color: var(--primary-red);
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.result-item p {
-  color: var(--dark-text);
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-.header-title-container {
+.group-title-button {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 15px; /* Espaço entre o logo e o título */
-  margin-bottom: 10px; /* Mantém o espaço que o H1 tinha */
+  width: 100%;
+  background-color: var(--grey-bg);
+  padding: 20px 25px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.group-title-button:hover {
+  background-color: #f0f0f0;
 }
 
-/* Adicione esta nova classe para o logo */
-.header-logo {
-  height: 50px; /* Ajuste a altura do logo como desejar */
-  width: auto;
-}
-
-/* Modifique a regra do H1 para remover a margem */
-.header h1 {
+.group-title {
   font-family: 'Montserrat', sans-serif;
-  color: var(--primary-red);
-  margin: 0; /* Margem removida para alinhar com o logo */
-  font-size: 3.2rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 1.4rem;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+  color: var(--light-text);
+}
+.chevron-icon.open {
+  transform: rotate(180deg);
+}
+
+.group-content {
+  padding: 10px 25px 25px 25px;
+  background-color: var(--white-bg);
+}
+
+/* --- Estilos para cada item de resultado dentro do acordeão --- */
+.result-item {
+  border-left-width: 5px;
+  border-left-style: solid;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--grey-bg);
+}
+
+.result-item.normal { border-left-color: #2ECC71; /* Verde */ }
+.result-item.alto, .result-item.baixo { border-left-color: #E74C3C; /* Vermelho */ }
+.result-item.indeterminado { border-left-color: #95a5a6; /* Cinza */ }
+
+.result-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 15px;
+}
+.result-header h4 {
+  font-family: 'Montserrat', sans-serif; margin: 0; color: var(--dark-text);
+  font-size: 1.2rem; font-weight: 600;
+}
+.result-value {
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem;
+  background-color: var(--white-bg); padding: 5px 12px; border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+.interpretation-text { color: var(--dark-text); line-height: 1.7; font-size: 1rem; margin: 0; }
+.interpretation-text p { margin: 0; } /* Remove margem padrão do markdown */
+.interpretation-text strong { color: var(--primary-red); }
+
+
+/* --- Estilos para a Análise formatada da IA --- */
+.ai-analysis {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border-color);
+}
+.ai-analysis h5 {
+  margin: 0 0 10px 0; color: var(--primary-red); font-family: 'Montserrat', sans-serif;
+  display: flex; align-items: center; gap: 8px; font-size: 1.1rem;
+}
+.ai-analysis .analysis-body { margin: 0; color: var(--dark-text); line-height: 1.6; font-size: 1rem; }
+.ai-analysis .analysis-body p, .ai-analysis .analysis-body ul { margin: 0 0 10px 0; }
+.ai-analysis .analysis-body strong { color: var(--primary-red); }
+
+.recommendation {
+  margin-top: 15px; padding: 15px; background-color: var(--light-red-bg);
+  border-radius: 8px; color: var(--primary-red);
+}
+.recommendation p { margin: 0; }
+
+.disclaimer {
+  margin-top: 15px; font-size: 0.85rem; color: var(--light-text);
+  display: flex; align-items: center; gap: 8px;
 }
 
 /* --- Responsive Adjustments --- */
@@ -309,6 +411,9 @@ input[type="file"] {
   }
   .main-content, .header {
     padding: 25px;
+  }
+  .user-inputs {
+    flex-direction: column;
   }
   .upload-zone {
     padding: 30px 15px;
@@ -338,10 +443,6 @@ input[type="file"] {
     .upload-zone {
         min-height: 120px;
     }
-    .upload-icon {
-        width: 40px;
-        height: 40px;
-    }
     .upload-instructions {
         font-size: 0.9rem;
     }
@@ -354,10 +455,14 @@ input[type="file"] {
     .result-item {
         padding: 15px;
     }
-    .result-item h3 {
-        font-size: 1.1rem;
+    .result-header h4 {
+        font-size: 1rem;
     }
-    .result-item p {
-        font-size: 0.85rem;
+    .result-value {
+        font-size: 0.9rem;
+    }
+    .interpretation-text {
+        font-size: 0.9rem;
     }
 }
+

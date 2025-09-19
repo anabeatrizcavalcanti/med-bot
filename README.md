@@ -35,6 +35,9 @@ Antes de começar, garanta que você tenha os seguintes programas instalados:
 2.  Crie um arquivo de ambiente chamado `.env` na raiz da pasta `backend`. Abra este arquivo e adicione sua chave da API da OpenAI:
     ```env
     OPENAI_API_KEY="SUA-CHAVE-DE-API-DA-OPENAI-AQUI"
+
+    Caso a sua chave API não seja reconhecida durante a execução do programa, utilize o comando $export OPENAI_API_KEY="SUA-CHAVE-DE-API-DA-OPENAI-AQUI"
+    no mesmo terminal do backend e tente novamente.
     ```
 
 3.  Instale as dependências de Python necessárias:

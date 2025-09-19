@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
-import { X, User, Activity, ChevronDown, AlertTriangle, Stethoscope } from 'lucide-react';
+import { X, ChevronDown, AlertTriangle, Activity } from 'lucide-react';
 import ExameGif from './exame.gif';
 import ReactMarkdown from 'react-markdown';
 
-// Componente para o Acordeão
+// O componente do Acordeão permanece o mesmo
 const AccordionItem = ({ group, isOpen, onToggle }) => (
   <div className="result-group">
     <button className="group-title-button" onClick={onToggle}>
@@ -19,16 +19,13 @@ const AccordionItem = ({ group, isOpen, onToggle }) => (
               <h4>{item.exame}</h4>
               <span className="result-value">{item.valor} {item.unidade}</span>
             </div>
-            {/* MUDANÇA: className foi removida. A estilização será feita pelo pai '.interpretation-text' */}
             <div className="interpretation-text">
                 <ReactMarkdown>{item.interpretacao}</ReactMarkdown>
             </div>
             
-            {/* MUDANÇA: A análise da IA agora é renderizada corretamente */}
             {item.analise_ia && (
                <div className="ai-analysis">
                  <h5><Activity size={16} /> {item.analise_ia.titulo}</h5>
-                 {/* MUDANÇA: className removida. Estilização via pai '.analysis-body' */}
                  <div className="analysis-body">
                     <ReactMarkdown>{item.analise_ia.analise}</ReactMarkdown>
                  </div>
@@ -54,6 +51,7 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  // MUDANÇA: O estado 'error' agora centraliza todas as mensagens de erro e aviso
   const [error, setError] = useState('');
   const fileInputRef = useRef(null);
   const [age, setAge] = useState('');
@@ -77,11 +75,16 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!selectedFile || !age || !sex) {
-      setError('Por favor, preencha a idade, o sexo e selecione um arquivo PDF.');
+    // MUDANÇA: A validação agora usa o estado 'error'
+    if (!age || !sex || !selectedFile) {
+      setError('Por favor, preencha a idade, o sexo e selecione um arquivo para continuar.');
       return;
     }
-    setIsLoading(true); setError(''); setResults([]); setOpenGroups({});
+    
+    setIsLoading(true); 
+    setError(''); 
+    setResults([]); 
+    setOpenGroups({});
 
     const formData = new FormData();
     formData.append('file', selectedFile);
@@ -122,17 +125,36 @@ function App() {
         <div className="user-inputs">
           <div className="input-group">
             <label htmlFor="age">Sua Idade</label>
-            <input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Ex: 35" />
+            <input 
+              type="text" 
+              inputMode="numeric" 
+              pattern="[0-9]*" 
+              id="age" 
+              value={age} 
+              onChange={(e) => setAge(e.target.value.replace(/[^0-9]/g, ''))} 
+              placeholder="Ex: 35" 
+            />
           </div>
           <div className="input-group">
             <label htmlFor="sex">Sexo Biológico</label>
-            <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
-              <option value="" disabled>Selecione...</option>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-            </select>
+            <div className="select-wrapper">
+              <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
+                <option value="" disabled>Selecione...</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+              </select>
+            </div>
           </div>
         </div>
+        
+        {/* MUDANÇA: O 'error' agora renderiza todas as mensagens de erro/aviso */}
+        {error && (
+            <div className="status-message error">
+                <AlertTriangle size={18} />
+                {error}
+            </div>
+        )}
+
         <div className="upload-zone" onDrop={handleDrop} onDragOver={handleDragOver} onDragLeave={handleDragLeave}>
           {selectedFile ? (
             <div className="file-preview">
@@ -144,10 +166,11 @@ function App() {
           )}
            <input type="file" ref={fileInputRef} accept=".pdf" onChange={handleFileChange} style={{ display: 'none' }} />
         </div>
-        {error && <p className="status-message error">{error}</p>}
-        <button className="process-button" onClick={handleSubmit} disabled={!selectedFile || !age || !sex || isLoading}>
+
+        <button className="process-button" onClick={handleSubmit} disabled={isLoading}>
           {isLoading ? 'Analisando...' : 'Analisar Exame'}
         </button>
+        
         {isLoading && (<div className="loading-indicator"><div className="spinner"></div><p>Analisando o documento com IA...</p></div>)}
 
         {results.length > 0 && (
@@ -169,4 +192,3 @@ function App() {
 }
 
 export default App;
-

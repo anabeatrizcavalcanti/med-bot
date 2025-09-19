@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
-import { X, ChevronDown, AlertTriangle, Activity } from 'lucide-react';
+import { X, ChevronDown, Activity, AlertTriangle } from 'lucide-react';
 import ExameGif from './exame.gif';
 import ReactMarkdown from 'react-markdown';
 
@@ -34,7 +34,6 @@ const AccordionItem = ({ group, isOpen, onToggle }) => (
                     <ReactMarkdown>{item.analise_ia.recomendacao}</ReactMarkdown>
                  </div>
                  <p className="disclaimer">
-                    <AlertTriangle size={14} />
                     {item.analise_ia.alerta}
                  </p>
                </div>
@@ -51,20 +50,17 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // MUDANÇA: O estado 'error' agora centraliza todas as mensagens de erro e aviso
   const [error, setError] = useState('');
   const fileInputRef = useRef(null);
   const [age, setAge] = useState('');
   const [sex, setSex] = useState('');
   const [openGroups, setOpenGroups] = useState({});
+  const [useRag, setUseRag] = useState(true); // Estado para controlar o uso do RAG
+  const [ragModeUsed, setRagModeUsed] = useState(null); // Estado para exibir o modo usado
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.type === 'application/pdf') {
-      setSelectedFile(file); setError(''); setResults([]);
-    } else {
-      setSelectedFile(null); setError('Por favor, selecione um arquivo PDF válido.');
-    }
+    if (file) { setSelectedFile(file); setError(''); setResults([]); }
   };
 
   const handleClearFile = () => {
@@ -75,7 +71,6 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // MUDANÇA: A validação agora usa o estado 'error'
     if (!age || !sex || !selectedFile) {
       setError('Por favor, preencha a idade, o sexo e selecione um arquivo para continuar.');
       return;
@@ -84,18 +79,22 @@ function App() {
     setIsLoading(true); 
     setError(''); 
     setResults([]); 
-    setOpenGroups({});
+    setRagModeUsed(null);
 
     const formData = new FormData();
     formData.append('file', selectedFile);
     formData.append('idade', age);
     formData.append('sexo', sex);
+    formData.append('rag', useRag); // Envia o modo RAG para o backend
 
     try {
       const response = await fetch('http://127.0.0.1:8000/analyze-pdf/', { method: 'POST', body: formData });
       const data = await response.json();
       if (!response.ok) throw new Error(data.detail || `Erro do servidor: ${response.status}`);
+      
       setResults(data.groups);
+      setRagModeUsed(data.rag_mode_used); // Armazena o modo que foi usado
+
     } catch (err) {
       setError(err.message || 'Ocorreu um erro ao se comunicar com o servidor.');
     } finally {
@@ -107,7 +106,7 @@ function App() {
     setOpenGroups(prev => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const handleDrop = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.remove('drag-over'); const file = e.dataTransfer.files[0]; if (file && file.type === 'application/pdf') { setSelectedFile(file); setError(''); setResults([]); } else { setSelectedFile(null); setError('Por favor, solte um arquivo PDF válido.'); } };
+  const handleDrop = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.remove('drag-over'); const file = e.dataTransfer.files[0]; if (file) { setSelectedFile(file); setError(''); setResults([]); } };
   const handleDragOver = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.add('drag-over'); };
   const handleDragLeave = (e) => { e.preventDefault(); e.stopPropagation(); e.currentTarget.classList.remove('drag-over'); };
 
@@ -125,15 +124,7 @@ function App() {
         <div className="user-inputs">
           <div className="input-group">
             <label htmlFor="age">Sua Idade</label>
-            <input 
-              type="text" 
-              inputMode="numeric" 
-              pattern="[0-9]*" 
-              id="age" 
-              value={age} 
-              onChange={(e) => setAge(e.target.value.replace(/[^0-9]/g, ''))} 
-              placeholder="Ex: 35" 
-            />
+            <input type="text" inputMode="numeric" pattern="[0-9]*" id="age" value={age} onChange={(e) => setAge(e.target.value.replace(/[^0-9]/g, ''))} placeholder="Ex: 35" />
           </div>
           <div className="input-group">
             <label htmlFor="sex">Sexo Biológico</label>
@@ -147,24 +138,15 @@ function App() {
           </div>
         </div>
         
-        {/* MUDANÇA: O 'error' agora renderiza todas as mensagens de erro/aviso */}
-        {error && (
-            <div className="status-message error">
-                <AlertTriangle size={18} />
-                {error}
-            </div>
-        )}
+        {error && (<div className="status-message error"><AlertTriangle size={18} />{error}</div>)}
 
         <div className="upload-zone" onDrop={handleDrop} onDragOver={handleDragOver} onDragLeave={handleDragLeave}>
-          {selectedFile ? (
-            <div className="file-preview">
-              <p className="file-name">{selectedFile.name}</p>
-              <button className="clear-file-button" onClick={handleClearFile}><X size={16} /></button>
-            </div>
-          ) : (
-            <p className="upload-instructions">Arraste e solte seu PDF aqui, ou <span className="browse-link" onClick={() => fileInputRef.current.click()}>procure um arquivo</span></p>
-          )}
+          {selectedFile ? ( <div className="file-preview"><p className="file-name">{selectedFile.name}</p><button className="clear-file-button" onClick={handleClearFile}><X size={16} /></button></div> ) : ( <p className="upload-instructions">Arraste e solte seu PDF aqui, ou <span className="browse-link" onClick={() => fileInputRef.current.click()}>procure um arquivo</span></p> )}
            <input type="file" ref={fileInputRef} accept=".pdf" onChange={handleFileChange} style={{ display: 'none' }} />
+        </div>
+        <div className="rag-toggle">
+            <input type="checkbox" id="ragSwitch" checked={useRag} onChange={(e) => setUseRag(e.target.checked)} />
+            <label htmlFor="ragSwitch">Usar Glossário (Análise RAG)</label>
         </div>
 
         <button className="process-button" onClick={handleSubmit} disabled={isLoading}>
@@ -175,7 +157,13 @@ function App() {
 
         {results.length > 0 && (
           <div className="results-display">
-            <h2>Resultados da Análise</h2>
+            <div className="results-header">
+                <h2>Resultados da Análise</h2>
+                <span className={`rag-badge ${ragModeUsed ? 'rag-on' : 'rag-off'}`}>
+                    {ragModeUsed ? 'Com RAG' : 'Sem RAG'}
+                </span>
+            </div>
+
             {results.map((group, groupIndex) => (
               <AccordionItem 
                 key={groupIndex}
@@ -192,3 +180,4 @@ function App() {
 }
 
 export default App;
+

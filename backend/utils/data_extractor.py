@@ -2,6 +2,9 @@ import os
 import json
 import re
 from openai import AsyncOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Carrega a chave da API
 api_key = os.getenv("OPENAI_API_KEY")
